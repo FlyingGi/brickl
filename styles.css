@@ -181,3 +181,5 @@ body.playing #app { height: 100vh; height: 100dvh; min-height: 0; overflow: hidd
 .btn.home { width: 48px; padding: 0; border-radius: 50%; flex-shrink: 0; }
 .speak[aria-pressed="true"] { background: var(--ink); }
 .speak[aria-pressed="true"] svg rect { fill: #fff; }
+.chip.hold { min-width: 92px; justify-content: center; touch-action: none; user-select: none; -webkit-user-select: none; }
+.chip.hold.on { background: var(--ink); color: #fff; }

@@ -56,6 +56,9 @@ const T = {
     dropCrank: 'The crank goes on an axle.', oneCrank: 'Only one crank. Remove the other one first.', atFlag: 'At the flag! Press \u201cTest it!\u201d',
     task: 'Task', fits: 'It fits!', nextTask: 'Next task', wall: 'wall',
     axles: 'Axles, different lengths', beam3: 'Short beam, 3 holes', pin: 'Pin', l2build: 'Your build from lesson 2',
+    pivot: 'Pivot', tapPivot: 'Tap a hole on the beam to move the pivot.', tooHeavyPush: 'Too heavy! Try moving the pivot.', boxSide: 'box side', handSide: 'your side', holesW: 'holes',
+    pinNear: 'Pin, near the middle', pinMid: 'Pin, middle', pinEdge: 'Pin, at the edge', bell: 'bell',
+    tFast: 'Fast gears', tStrong: 'Strong gears', tWorm: 'Worm gear', tRack: 'Rack', hookMotor: 'Hook motor', armMotor: 'Arm motor', hook: 'Hook', arm: 'Arm', dropSlot: 'Put the tool on a motor box.', weakPress: 'Too weak! This motor needs a stronger tool.',
     worm: 'Worm gear', b12: 'Bevel gear 12', b20: 'Bevel gear 20', flat24: 'Gear 24, flat', slanted: 'slanted', flatW: 'flat', rack: 'Gear rack', locked: 'Locked! The worm holds it.', motorLbl: 'motor', fan: 'fan',
     L: [
       {
@@ -198,6 +201,54 @@ const T = {
         right: 'Yes! Same size, same speed. Just around a corner.', wrong: 'Count again, slowly. A sticker on the gear helps.',
         tool: 'New tool: Turn a corner',
       },
+      {
+        idea: 'A lever is a bar that tips on a pivot, like a seesaw.\nWhere the pivot is changes everything!',
+        ideaSub: 'Pivot close to the box: easy to push, but the box goes up only a little. Pivot in the middle: harder, but the box goes up high.',
+        goal: 'Lift the heavy box with one finger.',
+        goals: ['Lift the heavy box with one finger. Tap a hole to move the pivot, then push the red end down.', 'This box is light. Now lift it up high, to the flag.'],
+        prob: {
+          heavy: 'Too heavy! Move the pivot closer to the box.', low: 'The box doesn\u2019t go high enough. Move the pivot away from the box.', push: 'Now push the red end down with your finger.',
+        },
+        winSub: 'Pivot near the load: strong, but a small move. Pivot far away: a big move, but harder. Engineers choose!',
+        b: ['Build a small stand: a stack of bricks with a pin on top.', 'Put a long beam on the pin. It tips like a seesaw.', 'Put a toy on one end. Push the other end down.', 'Move the beam so the pin is close to the toy. Push again.'],
+        testQ: 'Test it! Where was it easier to push?',
+        opts: ['Pin close to the toy', 'Pin in the middle'],
+        right: 'Yes! Pivot close to the load makes it easy, but the toy goes up less.', wrong: 'Try both again. Where do you need less push?',
+        tool: 'New tool: Lever',
+      },
+      {
+        idea: 'A turning wheel with a rod makes something slide back and forth.\nTrains and engines work like this!',
+        ideaSub: 'The pin goes round and round. The rod pushes and pulls. The farther the pin is from the middle, the longer the push.',
+        goal: 'Ring the far bell. The slider must reach it.',
+        goals: ['Ring the far bell. The slider must reach it.', 'Now ring the near bell gently. Don\u2019t knock it over!'],
+        prob: {
+          pin: 'Put a pin on the wheel.', on: 'Switch the motor on!',
+          short: 'The slider doesn\u2019t reach the bell. Put the pin farther from the middle.', long: 'Too far! The bell falls over. Put the pin closer to the middle.',
+        },
+        winSub: 'Pin far from the middle: a long push. Pin near the middle: a short push.',
+        b: ['Put a short beam (3 holes) on an axle. That is the crank.', 'Push a pin into the last hole of the short beam.', 'Put a long beam on the pin. That is the rod. Its other end slides on the table.', 'Turn the crank. The rod pushes and pulls!'],
+        testQ: 'Test it! Move the pin to the middle hole of the short beam. Does the rod move more or less?',
+        opts: ['More', 'Less'],
+        right: 'Yes! Pin closer to the middle = a shorter push.', wrong: 'Watch the end of the rod. How far does it go now?',
+        tool: 'New tool: Push and pull',
+      },
+      {
+        idea: 'A crane uses two tools at once:\none lifts the hook, one raises the arm.',
+        ideaSub: 'Both must be strong. And both must hold still when the motor stops, or the load falls!',
+        goal: 'Lift the crate to the flag and raise the arm to the dotted line. Both must stay up when you let go.',
+        prob: {
+          hoistEmpty: 'Choose a tool for the hook motor.', boomEmpty: 'Choose a tool for the arm motor.',
+          hoistWeak: 'The hook motor is too weak. Which tool makes it strong?', boomWeak: 'The arm motor is too weak. Which tool makes it strong?',
+          hoistFalls: 'The crate slides down when you let go! Which tool locks?', boomFalls: 'The arm falls down when you let go! Which tool locks?',
+          hoistLow: 'Hold the hook \u25b2 button until the crate reaches the flag.', boomLow: 'Hold the arm \u25b2 button until the arm reaches the dotted line.',
+        },
+        winSub: 'Worm gears make both motors strong, and they lock. Your crane holds everything!',
+        b: ['Build a tower: stand two long beams up on a base.', 'Put your worm winch from lesson 7 on top of the tower.', 'Tie the string to the winch. Make a hook at the end.', 'Turn the worm. The hook goes up and stays there!'],
+        testQ: 'Test it! Why does a crane use a worm gear?',
+        opts: ['It locks, so the load can\u2019t fall', 'It is the fastest gear'],
+        right: 'Yes! The worm holds the load, even when the motor stops.', wrong: 'Think about lesson 7: what happened when the motor stopped?',
+        tool: 'New machine: Crane',
+      },
     ],
   },
   de: {
@@ -223,6 +274,9 @@ const T = {
     dropCrank: 'Die Kurbel kommt auf eine Achse.', oneCrank: 'Nur eine Kurbel. Nimm erst die andere weg.', atFlag: 'An der Fahne! Drück auf \u201eTesten!\u201c',
     task: 'Aufgabe', fits: 'Passt!', nextTask: 'Nächste Aufgabe', wall: 'Wand',
     axles: 'Achsen, verschieden lang', beam3: 'Kurzer Balken, 3 Löcher', pin: 'Pin', l2build: 'Dein Bau aus Lektion 2',
+    pivot: 'Drehpunkt', tapPivot: 'Tipp auf ein Loch im Balken, um den Drehpunkt zu versetzen.', tooHeavyPush: 'Zu schwer! Versetz den Drehpunkt.', boxSide: 'Kisten-Seite', handSide: 'deine Seite', holesW: 'Löcher',
+    pinNear: 'Pin, nah an der Mitte', pinMid: 'Pin, Mitte', pinEdge: 'Pin, am Rand', bell: 'Glocke',
+    tFast: 'Schnelle Zahnräder', tStrong: 'Starke Zahnräder', tWorm: 'Schnecke', tRack: 'Zahnstange', hookMotor: 'Haken-Motor', armMotor: 'Arm-Motor', hook: 'Haken', arm: 'Arm', dropSlot: 'Leg das Werkzeug auf einen Motor-Kasten.', weakPress: 'Zu schwach! Dieser Motor braucht ein stärkeres Werkzeug.',
     worm: 'Schnecke', b12: 'Kegelrad 12', b20: 'Kegelrad 20', flat24: 'Zahnrad 24, flach', slanted: 'schräg', flatW: 'flach', rack: 'Zahnstange', locked: 'Gesperrt! Die Schnecke hält es fest.', motorLbl: 'Motor', fan: 'Ventilator',
     L: [
       {
@@ -365,6 +419,54 @@ const T = {
         right: 'Ja! Gleich groß, gleich schnell. Nur eben um die Ecke.', wrong: 'Zähl nochmal, ganz langsam. Ein Aufkleber am Zahnrad hilft.',
         tool: 'Neues Werkzeug: Um die Ecke',
       },
+      {
+        idea: 'Ein Hebel ist ein Balken, der auf einem Drehpunkt kippt, wie eine Wippe.\nWo der Drehpunkt ist, macht den Unterschied!',
+        ideaSub: 'Drehpunkt nah an der Kiste: leicht zu drücken, aber die Kiste geht nur ein bisschen hoch. Drehpunkt in der Mitte: schwerer, aber die Kiste geht hoch hinauf.',
+        goal: 'Heb die schwere Kiste mit einem Finger.',
+        goals: ['Heb die schwere Kiste mit einem Finger. Tipp auf ein Loch, um den Drehpunkt zu versetzen, dann drück das rote Ende nach unten.', 'Diese Kiste ist leicht. Jetzt heb sie hoch hinauf, bis zur Fahne.'],
+        prob: {
+          heavy: 'Zu schwer! Setz den Drehpunkt näher an die Kiste.', low: 'Die Kiste geht nicht hoch genug. Setz den Drehpunkt weiter weg von der Kiste.', push: 'Jetzt drück das rote Ende mit dem Finger nach unten.',
+        },
+        winSub: 'Drehpunkt nah an der Last: stark, aber eine kleine Bewegung. Drehpunkt weit weg: eine große Bewegung, aber schwerer. Ingenieure entscheiden!',
+        b: ['Bau einen kleinen Ständer: ein Stapel Steine mit einem Pin oben drauf.', 'Leg einen langen Balken auf den Pin. Er kippt wie eine Wippe.', 'Leg ein Spielzeug auf ein Ende. Drück das andere Ende nach unten.', 'Schieb den Balken so, dass der Pin nah am Spielzeug ist. Drück nochmal.'],
+        testQ: 'Teste es! Wo ging das Drücken leichter?',
+        opts: ['Pin nah am Spielzeug', 'Pin in der Mitte'],
+        right: 'Ja! Drehpunkt nah an der Last macht es leicht, aber das Spielzeug geht weniger hoch.', wrong: 'Probier beides nochmal. Wo musst du weniger drücken?',
+        tool: 'Neues Werkzeug: Hebel',
+      },
+      {
+        idea: 'Ein drehendes Rad mit einer Stange schiebt etwas hin und her.\nZüge und Motoren funktionieren so!',
+        ideaSub: 'Der Pin dreht sich im Kreis. Die Stange schiebt und zieht. Je weiter der Pin von der Mitte weg ist, desto länger schiebt sie.',
+        goal: 'Lass die ferne Glocke klingeln. Der Schieber muss sie erreichen.',
+        goals: ['Lass die ferne Glocke klingeln. Der Schieber muss sie erreichen.', 'Jetzt lass die nahe Glocke sanft klingeln. Wirf sie nicht um!'],
+        prob: {
+          pin: 'Steck einen Pin auf das Rad.', on: 'Schalte den Motor an!',
+          short: 'Der Schieber erreicht die Glocke nicht. Setz den Pin weiter weg von der Mitte.', long: 'Zu weit! Die Glocke fällt um. Setz den Pin näher an die Mitte.',
+        },
+        winSub: 'Pin weit weg von der Mitte: ein langer Schub. Pin nah an der Mitte: ein kurzer Schub.',
+        b: ['Steck einen kurzen Balken (3 Löcher) auf eine Achse. Das ist die Kurbel.', 'Steck einen Pin in das letzte Loch vom kurzen Balken.', 'Steck einen langen Balken auf den Pin. Das ist die Stange. Ihr anderes Ende rutscht über den Tisch.', 'Dreh die Kurbel. Die Stange schiebt und zieht!'],
+        testQ: 'Teste es! Steck den Pin in das mittlere Loch vom kurzen Balken. Bewegt sich die Stange mehr oder weniger?',
+        opts: ['Mehr', 'Weniger'],
+        right: 'Ja! Pin näher an der Mitte = ein kürzerer Schub.', wrong: 'Schau auf das Ende der Stange. Wie weit geht es jetzt?',
+        tool: 'Neues Werkzeug: Schieben und ziehen',
+      },
+      {
+        idea: 'Ein Kran nutzt zwei Werkzeuge gleichzeitig:\neins hebt den Haken, eins hebt den Arm.',
+        ideaSub: 'Beide müssen stark sein. Und beide müssen stillhalten, wenn der Motor stoppt, sonst fällt die Last!',
+        goal: 'Heb die Kiste bis zur Fahne und den Arm bis zur gestrichelten Linie. Beides muss oben bleiben, wenn du loslässt.',
+        prob: {
+          hoistEmpty: 'Such ein Werkzeug für den Haken-Motor aus.', boomEmpty: 'Such ein Werkzeug für den Arm-Motor aus.',
+          hoistWeak: 'Der Haken-Motor ist zu schwach. Welches Werkzeug macht ihn stark?', boomWeak: 'Der Arm-Motor ist zu schwach. Welches Werkzeug macht ihn stark?',
+          hoistFalls: 'Die Kiste rutscht runter, wenn du loslässt! Welches Werkzeug sperrt?', boomFalls: 'Der Arm fällt runter, wenn du loslässt! Welches Werkzeug sperrt?',
+          hoistLow: 'Halt den \u25b2-Knopf vom Haken gedrückt, bis die Kiste an der Fahne ist.', boomLow: 'Halt den \u25b2-Knopf vom Arm gedrückt, bis der Arm an der gestrichelten Linie ist.',
+        },
+        winSub: 'Schnecken machen beide Motoren stark, und sie sperren. Dein Kran hält alles fest!',
+        b: ['Bau einen Turm: Stell zwei lange Balken auf eine Grundplatte.', 'Setz deine Schnecken-Seilwinde aus Lektion 7 oben auf den Turm.', 'Bind die Schnur an die Winde. Mach unten einen Haken dran.', 'Dreh die Schnecke. Der Haken geht hoch und bleibt oben!'],
+        testQ: 'Teste es! Warum hat ein Kran eine Schnecke?',
+        opts: ['Sie sperrt, damit die Last nicht fällt', 'Sie ist das schnellste Zahnrad'],
+        right: 'Ja! Die Schnecke hält die Last, auch wenn der Motor stoppt.', wrong: 'Denk an Lektion 7: Was ist passiert, als der Motor gestoppt hat?',
+        tool: 'Neue Maschine: Kran',
+      },
     ],
   },
 };
@@ -375,6 +477,8 @@ const gearOnAxle = (an, axleId) => an.gs.find((g) => g.axle === axleId) || null;
 const firstJam = (an) => { const j = an.pairs.find((x) => x.type === 'jam'); return j ? [j.x, j.y] : null; };
 const at = (hx, hy) => [holeX(hx), holeY(hy)];
 
+// Lesson 11 wheel and rod sizes (needed by the lesson data below).
+const SLD = { cx: 200, cy: 220, R: 104, rod: 250, pins: { pinNear: 32, pinMid: 64, pinEdge: 96 } };
 const LESSONS = [
   { // 1 Fast gears
     stock: { axle: 3, g8: 1, g16: 1, g24: 1, motor: 1 },
@@ -668,6 +772,97 @@ const LESSONS = [
     },
     badge: 'b20',
   },
+  { // 10 Levers
+    type: 'lever', noMotor: true, rounds: [{ w: 3, flag: 20 }, { w: 1, flag: 90 }],
+    stock: { pivot: 1 }, reusable: true, fixed: { axles: [], motor: null }, ghosts: [],
+    check(p) {
+      const r = this.rounds[p.round], pv = p.pivot;
+      if ((r.w * pv) / (10 - pv) > 1.001) return 'heavy';
+      if (pv * U * Math.sin(LEV.maxA) < r.flag) return 'low';
+      if (!p.reached) return 'push';
+      return null;
+    },
+    target() { return null; },
+    drop(p, kind, x) { if (x == null) { toast(t().tapPivot); return false; } const h = Math.round((x - LEV.x0) / U); if (h >= 1 && h <= 9) setPivot(p, h); return true; },
+    draw: (p, o) => leverSVG(p, o),
+    resetRound(p) { p.pivot = 5; p.levA = 0; p.reached = false; },
+    tick(p, dt) { if (!p.levDrag && p.levA > 0) { p.levA = Math.max(0, p.levA - 1.4 * dt); drawBoard(); } },
+    idea: { kind: 'lever' },
+    build: {
+      parts: [['beam9', 1], ['pin', 1], ['toy', 1]],
+      scenes: [{ svg: () => leverSVG({ pivot: 5, levA: 0, round: 0, helpers: false }, { stand: true, onlyStand: true }) }, { svg: () => leverSVG({ pivot: 5, levA: 0.2, round: 0, helpers: false }, { noBox: true }) }, { svg: () => leverSVG({ pivot: 5, levA: 0.3, round: 0, helpers: false }, { push: true }) }, { svg: () => leverSVG({ pivot: 2, levA: 0.35, round: 0, helpers: true }, { push: true }) }],
+      answers: 'choice', icons: ['leverNear', 'leverMid'], correct: 0,
+    },
+    badge: 'leverNear',
+  },
+  { // 11 Push and pull (crank and rod)
+    type: 'slider', rounds: [{ bell: SLD.cx + SLD.pins.pinEdge + SLD.rod + 20 }, { bell: SLD.cx + SLD.pins.pinNear + SLD.rod + 20 }],
+    stock: { pinNear: 1, pinMid: 1, pinEdge: 1 }, reusable: true, fixed: { axles: [], motor: null }, ghosts: [],
+    check(p) {
+      if (!p.pinR) return 'pin';
+      if (!p.motorOn) return 'on';
+      const reach = SLD.cx + p.pinR + SLD.rod + 20, bell = this.rounds[p.round].bell;
+      if (reach < bell - 3) return 'short';
+      if (reach > bell + 3) return 'long';
+      return null;
+    },
+    target() { return null; },
+    drop(p, kind) { p.pinR = SLD.pins[kind]; p.pinKind = kind; p.bellDown = false; return true; },
+    draw: (p, o) => sliderSVG(p, o),
+    resetRound(p) { p.pinR = null; p.pinKind = null; p.bellDown = false; p.motorOn = false; },
+    tick(p, dt) {
+      if (p.motorOn) p.theta += 2.2 * dt;
+      p.ring = Math.max(0, (p.ring || 0) - dt);
+      if (p.pinR) {
+        const sx = sliderX(p.pinR, p.theta), bell = LS().rounds[p.round].bell;
+        if (sx + 20 >= bell - 3 && p.motorOn) { if (sx + 20 > bell + 3) p.bellDown = true; else p.ring = 0.6; }
+      }
+      drawBoard();
+    },
+    idea: { kind: 'slider' },
+    build: {
+      parts: [['beam3', 1], ['beam9', 1], ['axle4', 1], ['pin', 2]],
+      scenes: [{ svg: () => sliderSVG({ pinR: null, theta: -0.5, round: 0 }, { bare: true, noRod: true }) }, { svg: () => sliderSVG({ pinR: SLD.pins.pinEdge, theta: -0.5, round: 0 }, { bare: true, noRod: true, hlPin: true }) }, { svg: () => sliderSVG({ pinR: SLD.pins.pinEdge, theta: -0.5, round: 0 }, { bare: true, hlRod: true }) }, { svg: () => sliderSVG({ pinR: SLD.pins.pinEdge, theta: -0.5, round: 0 }, { bare: true, spin: true }) }],
+      answers: 'choice', icons: ['more', 'less'], correct: 1,
+    },
+    badge: 'pinEdge',
+  },
+  { // 12 Crane (machine)
+    type: 'machine', noMotor: true, holds: ['hoist', 'boom'],
+    stock: { tFast: 1, tStrong: 1, tWorm: 1, tRack: 1 }, reusable: true, fixed: { axles: [], motor: null }, ghosts: [],
+    check(p) {
+      for (const f of ['hoist', 'boom']) if (!p.slots[f]) return f + 'Empty';
+      for (const f of ['hoist', 'boom']) if (TOOLS[p.slots[f]].strength < 2) return f + 'Weak';
+      for (const f of ['hoist', 'boom']) if (!TOOLS[p.slots[f]].lock) return f + 'Falls';
+      if (p.val.hoist < 0.95) return 'hoistLow';
+      if (p.val.boom < 0.95) return 'boomLow';
+      return null;
+    },
+    target() { return null; },
+    drop(p, kind, x, y) {
+      const f = y == null ? (!p.slots.hoist ? 'hoist' : 'boom') : (y < (CRN.hookBox[1] + CRN.armBox[1]) / 2 + 30 ? 'hoist' : 'boom');
+      p.slots[f] = kind; return true;
+    },
+    draw: (p, o) => craneSVG(p, o),
+    tick(p, dt) {
+      for (const f of ['hoist', 'boom']) {
+        const tool = p.slots[f] ? TOOLS[p.slots[f]] : null, held = p.hold && p.hold.f === f;
+        p.shake[f] = false;
+        if (held && tool) {
+          if (tool.strength < 2 && p.hold.dir > 0) { p.shake[f] = true; if (!p.hold.warned) { p.hold.warned = true; toast(t().weakPress); } }
+          else p.val[f] = Math.max(0, Math.min(1, p.val[f] + p.hold.dir * tool.rate * dt));
+        } else if ((!tool || !tool.lock) && p.val[f] > 0) p.val[f] = Math.max(0, p.val[f] - 0.45 * dt);
+      }
+      drawBoard();
+    },
+    idea: { kind: 'crane' },
+    build: {
+      parts: [['beam9', 2], ['worm', 1], ['g24', 1], ['string', 1]],
+      scenes: [{ svg: () => craneSVG({ slots: {}, val: { hoist: 0, boom: 0.4 }, shake: {} }, { bare: true, noBoom: true, noRope: true }) }, { svg: () => craneSVG({ slots: {}, val: { hoist: 0, boom: 0.4 }, shake: {} }, { bare: true, noRope: true, hlTop: true }) }, { svg: () => craneSVG({ slots: {}, val: { hoist: 0, boom: 0.4 }, shake: {} }, { bare: true }) }, { svg: () => craneSVG({ slots: {}, val: { hoist: 0.7, boom: 0.4 }, shake: {} }, { bare: true, upArrow: true }) }],
+      answers: 'choice', icons: ['lock', 'tFast'], correct: 0,
+    },
+    badge: 'crane',
+  },
 ];
 // Can a hand (or crank) turn gear g with the heavy box on it?
 const liftRate = (an) => (LS().rack && an.loadGear ? an.loadGear.r : LS().liftRate || LIFT_PER_RAD);
@@ -689,7 +884,7 @@ function newPlay(li) {
   const L = LESSONS[li];
   return {
     axles: L.fixed.axles.map((a) => ({ ...a })), gears: [], motor: L.fixed.motor, motorFixed: !!L.fixed.motor,
-    motorOn: false, reverse: false, helpers: true, sel: null, ang: {}, phis: {}, nextId: 1, lift: 0, prevLoad: null, warned: false, round: 0, axleLen: null, crank: null, atFlag: false, fellBack: false, slotA: null, slotB: null,
+    motorOn: false, reverse: false, helpers: true, sel: null, ang: {}, phis: {}, nextId: 1, lift: 0, prevLoad: null, warned: false, round: 0, axleLen: null, crank: null, atFlag: false, fellBack: false, slotA: null, slotB: null, pivot: 5, levA: 0, levDrag: false, reached: false, pinR: null, pinKind: null, theta: 0, ring: 0, bellDown: false, slots: { hoist: null, boom: null }, val: { hoist: 0, boom: 0 }, hold: null, shake: {},
   };
 }
 
@@ -726,7 +921,7 @@ function dirArrow(R, cw, col) {
   return `<g transform="scale(${cw ? 1 : -1} 1)"><path d="M${x0.toFixed(1)},${y0.toFixed(1)} A${R},${R} 0 0 1 ${x1.toFixed(1)},${y1.toFixed(1)}" fill="none" stroke="${col}" stroke-width="4" stroke-linecap="round"/><path d="M${(x1 + 9).toFixed(1)},${(y1 + 2).toFixed(1)} L${(x1 - 5).toFixed(1)},${(y1 - 6).toFixed(1)} L${(x1 - 3).toFixed(1)},${(y1 + 9).toFixed(1)}Z" fill="${col}"/></g>`;
 }
 const crankArm = (Lp, hlPin) => `<rect x="-13" y="-13" width="${Lp + 26}" height="26" rx="13" fill="#5B6270" stroke="#1F2430" stroke-width="2"/><circle r="7" fill="#1F2430"/><circle cx="${Lp}" cy="0" r="15" fill="#C93C3C" stroke="#fff" stroke-width="3"/>`;
-const crate = (w = 64, h = 60) => `<rect x="${-w / 2}" y="0" width="${w}" height="${h}" rx="6" fill="#B5793C" stroke="#7A4D20" stroke-width="3"/><path d="M${-w / 2 + 6},6 L${w / 2 - 6},${h - 6} M${w / 2 - 6},6 L${-w / 2 + 6},${h - 6}" stroke="#7A4D20" stroke-width="3"/><rect x="-17" y="${h / 2 - 11}" width="34" height="22" rx="5" fill="#1F2430"/><text y="${h / 2 + 5}" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">50</text>`;
+const crate = (w = 64, h = 60, label = '50') => `<rect x="${-w / 2}" y="0" width="${w}" height="${h}" rx="6" fill="#B5793C" stroke="#7A4D20" stroke-width="3"/><path d="M${-w / 2 + 6},6 L${w / 2 - 6},${h - 6} M${w / 2 - 6},6 L${-w / 2 + 6},${h - 6}" stroke="#7A4D20" stroke-width="3"/><rect x="-17" y="${h / 2 - 11}" width="34" height="22" rx="5" fill="#1F2430"/><text y="${h / 2 + 5}" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">${label}</text>`;
 
 function icon(kind, w = 56, h = 44) {
   if (kind === 'axle') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="4" y="19" width="48" height="7" rx="2" fill="#1F2430"/><rect x="4" y="15" width="5" height="15" rx="1.5" fill="#1F2430"/></svg>`;
@@ -744,6 +939,15 @@ function icon(kind, w = 56, h = 44) {
   if (kind === 'lock') return `<svg width="${w}" height="${h}" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="#F2A33A" stroke="#1F2430" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="#1F2430" stroke-width="2"/></svg>`;
   if (kind === 'slide') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="24" y="6" width="10" height="32" rx="2" fill="#9AA3B2" stroke="#5B6270" stroke-width="2"/><path d="M44 12v20M40 16l4-5 4 5M40 28l4 5 4-5" fill="none" stroke="#1F2430" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   if (kind === 'spin') return `<svg width="${w}" height="${h}" viewBox="-28 -22 56 44" aria-hidden="true"><rect x="-5" y="-16" width="10" height="32" rx="2" fill="#9AA3B2" stroke="#5B6270" stroke-width="2"/><g transform="translate(0 4)">${dirArrow(20, true, '#1F2430')}</g></svg>`;
+  if (kind === 'pivot') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><path d="M28,12 L14,38 L42,38Z" fill="#5B6270" stroke="#1F2430" stroke-width="2"/><circle cx="28" cy="12" r="6" fill="#F2A33A" stroke="#1F2430" stroke-width="2"/></svg>`;
+  if (kind === 'leverNear' || kind === 'leverMid') { const px = kind === 'leverNear' ? 16 : 28; return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="4" y="18" width="48" height="8" rx="4" fill="#3A4150" transform="rotate(-10 ${px} 22)"/><path d="M${px},24 L${px - 7},38 L${px + 7},38Z" fill="#5B6270"/><rect x="4" y="6" width="12" height="10" rx="2" fill="#B5793C"/></svg>`; }
+  if (/^pin(Near|Mid|Edge)$/.test(kind)) { const r = { pinNear: 5, pinMid: 10, pinEdge: 15 }[kind]; return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><circle cx="28" cy="22" r="19" fill="#F2A33A" stroke="#B86E0F" stroke-width="2"/><circle cx="28" cy="22" r="3" fill="#1F2430"/><circle cx="${28 + r}" cy="22" r="4.5" fill="#C93C3C" stroke="#fff" stroke-width="1.5"/></svg>`; }
+  if (kind === 'more' || kind === 'less') { const l = kind === 'more' ? 40 : 18; return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><path d="M${28 - l / 2},22 h${l} M${28 - l / 2 + 6},16 l-6,6 l6,6 M${28 + l / 2 - 6},16 l6,6 l-6,6" fill="none" stroke="#1F2430" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`; }
+  if (kind === 'tFast') return `<svg width="${w}" height="${h}" viewBox="-48 -40 150 80" aria-hidden="true"><g transform="scale(.6)">${gearSVG(24)}</g><g transform="translate(${(radius(24) + radius(8)) * 0.6} 0) scale(.6)">${gearSVG(8)}</g></svg>`;
+  if (kind === 'tStrong') return icon('l2build', w, h);
+  if (kind === 'tWorm') return icon('worm', w, h);
+  if (kind === 'tRack') return icon('rack', w, h);
+  if (kind === 'crane') return `<svg width="${w}" height="${h}" viewBox="0 0 56 56" aria-hidden="true"><path d="M14 52V12h4v40zM14 12l34 6" fill="none" stroke="#B86E0F" stroke-width="4"/><path d="M44 17v18" stroke="#7A4D20" stroke-width="2"/><rect x="38" y="35" width="12" height="10" rx="2" fill="#B5793C"/></svg>`;
   if (kind === 'axles') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="6" y="8" width="20" height="6" rx="2" fill="#1F2430"/><rect x="6" y="19" width="32" height="6" rx="2" fill="#1F2430"/><rect x="6" y="30" width="44" height="6" rx="2" fill="#1F2430"/></svg>`;
   if (kind === 'beam3') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="4" y="12" width="48" height="20" rx="10" fill="#3A4150"/>${[0, 1, 2].map((i) => `<circle cx="${14 + i * 14}" cy="22" r="4.5" fill="#FAF8F3"/>`).join('')}</svg>`;
   if (kind === 'pin') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="10" y="17" width="36" height="10" rx="4" fill="#1F2430"/><rect x="26" y="14" width="4" height="16" rx="1" fill="#1F2430"/></svg>`;
@@ -805,6 +1009,120 @@ function tickCorner(dt, A, B) {
   if (a) a.setAttribute('stroke-dashoffset', (-cornerA * 8).toFixed(1));
   if (b) b.setAttribute('stroke-dashoffset', (cornerA * 8 * ratio).toFixed(1));
   if (pr) pr.setAttribute('transform', `scale(${Math.cos(cornerA * ratio).toFixed(3)} 1)`);
+}
+
+// ---------- Lever (lesson 10) ----------
+const LEV = { x0: 120, y: 250, maxA: 0.42 };
+function setPivot(p, h) { p.pivot = h; p.levA = 0; p.reached = false; }
+function leverSVG(p, o = {}) {
+  const L = t(), pv = p.pivot, a = p.levA || 0, { x0, y } = LEV, px = x0 + pv * U, ground = y + 110;
+  const r = (LESSONS[9].rounds || [])[p.round || 0] || { w: 3, flag: 20 };
+  const deg = (a * 180) / Math.PI, boxH = 54;
+  let s = `<rect x="20" y="${ground}" width="744" height="8" rx="4" fill="#CFC8BA"/>`;
+  s += `<path d="M${px},${y + 14} L${px - 40},${ground} L${px + 40},${ground}Z" fill="#5B6270" stroke="#1F2430" stroke-width="2"/>`;
+  if (o.onlyStand) return s + `<circle cx="${px}" cy="${y}" r="9" fill="#1F2430"/><circle cx="${px}" cy="${y}" r="26" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
+  // flag line for the box top
+  if (!o.noBox && !o.bare) {
+    const fy = y - 14 - boxH - r.flag;
+    s += `<line x1="40" y1="${fy}" x2="${x0 + 50}" y2="${fy}" stroke="#1E8A4C" stroke-width="3" stroke-dasharray="8 6"/><line x1="44" y1="${fy - 40}" x2="44" y2="${ground}" stroke="#1F2430" stroke-width="4"/><path d="M46,${fy - 40} L86,${fy - 28} L46,${fy - 16}Z" fill="#1E8A4C"/>`;
+  }
+  // beam (tips around the pivot)
+  s += `<g transform="rotate(${deg.toFixed(2)} ${px} ${y})"><rect x="${x0 - 26}" y="${y - 20}" width="${10 * U + 52}" height="40" rx="20" fill="#3A4150"/>`;
+  for (let h = 0; h <= 10; h++) s += `<circle cx="${x0 + h * U}" cy="${y}" r="12" fill="${h === pv ? '#1F2430' : '#F3EFE6'}" data-hole="${h}" style="cursor:pointer"/>`;
+  s += `<g data-lever="1" style="cursor:grab"><circle cx="${x0 + 10 * U}" cy="${y}" r="24" fill="#C93C3C" stroke="#fff" stroke-width="3"/><circle cx="${x0 + 10 * U}" cy="${y}" r="44" fill="transparent"/></g></g>`;
+  s += `<circle cx="${px}" cy="${y}" r="9" fill="#F2A33A" stroke="#1F2430" stroke-width="2" pointer-events="none"/>`;
+  if (o.blinkHole != null) s += `<circle cx="${x0 + o.blinkHole * U}" cy="${y}" r="22" fill="none" stroke="#F2A33A" stroke-width="6" class="blink" pointer-events="none"/>`;
+  // box on the left end
+  if (!o.noBox) {
+    const ex = px - pv * U * Math.cos(a), ey = y - pv * U * Math.sin(a);
+    s += `<g transform="translate(${ex.toFixed(1)} ${(ey - 20 - boxH).toFixed(1)})" class="${p.shakeBox ? 'shake' : ''}" pointer-events="none">${crate(60, boxH, r.w === 3 ? '30' : '10')}</g>`;
+  }
+  if (a === 0 && !o.bare) s += `<path d="M${x0 + 10 * U},${y - 80} v40 M${x0 + 10 * U - 10},${y - 52} l10,12 l10,-12" fill="none" stroke="#C93C3C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>`;
+  if (o.push) s += `<path d="M${x0 + 10 * U + 40},${y - 30} v60 M${x0 + 10 * U + 30},${y + 18} l10,12 l10,-12" fill="none" stroke="#C93C3C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`;
+  if (p.helpers) {
+    const lab = (x, txt) => `<g transform="translate(${x} ${ground + 30})"><rect x="-70" y="-15" width="140" height="28" rx="9" fill="#1F2430"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">${esc(txt)}</text></g>`;
+    s += lab((x0 + px) / 2, `${L.boxSide}: ${pv}`) + lab((px + x0 + 10 * U) / 2, `${L.handSide}: ${10 - pv}`);
+  }
+  return s;
+}
+
+// ---------- Crank and rod (lesson 11) ----------
+const sliderX = (r, th) => SLD.cx + r * Math.cos(th) + Math.sqrt(SLD.rod * SLD.rod - (r * Math.sin(th)) ** 2);
+function sliderSVG(p, o = {}) {
+  const { cx, cy, R, rod } = SLD, th = p.theta || 0, L = t();
+  const bell = o.bare ? null : LESSONS[10].rounds[p.round || 0].bell;
+  let s = `<rect x="${cx + 60}" y="${cy + 26}" width="${560}" height="10" rx="5" fill="#CFC8BA"/>`;
+  // wheel
+  s += `<g transform="translate(${cx} ${cy}) rotate(${((th * 180) / Math.PI).toFixed(2)})"><circle r="${R}" fill="#F2A33A" stroke="#B86E0F" stroke-width="3"/>`;
+  for (const [k, r] of Object.entries(SLD.pins)) s += `<circle cx="${r}" cy="0" r="10" fill="#FFF6EA" stroke="#B86E0F" stroke-width="2"/>`;
+  s += `<circle r="16" fill="#FFF6EA"/>${axleCross(9)}</g>`;
+  if (!o.bare) s += `<g transform="translate(${cx} ${cy})">${motorBadge(false)}</g>`;
+  if (p.pinR && !o.noRod) {
+    const pxp = cx + p.pinR * Math.cos(th), pyp = cy + p.pinR * Math.sin(th), sx = sliderX(p.pinR, th);
+    s += `<line x1="${pxp.toFixed(1)}" y1="${pyp.toFixed(1)}" x2="${sx.toFixed(1)}" y2="${cy}" stroke="#5B6270" stroke-width="18" stroke-linecap="round"/><line x1="${pxp.toFixed(1)}" y1="${pyp.toFixed(1)}" x2="${sx.toFixed(1)}" y2="${cy}" stroke="#3A4150" stroke-width="12" stroke-linecap="round"/>`;
+    s += `<rect x="${(sx - 20).toFixed(1)}" y="${cy - 22}" width="40" height="46" rx="6" fill="#3E7BEA" stroke="#1F55B5" stroke-width="3"/>`;
+    if (o.hlRod) s += `<line x1="${pxp.toFixed(1)}" y1="${pyp.toFixed(1)}" x2="${sx.toFixed(1)}" y2="${cy}" stroke="#F2A33A" stroke-width="30" stroke-linecap="round" opacity=".35" class="pulse"/>`;
+  }
+  if (p.pinR) {
+    const pxp = cx + p.pinR * Math.cos(th), pyp = cy + p.pinR * Math.sin(th);
+    s += `<circle cx="${pxp.toFixed(1)}" cy="${pyp.toFixed(1)}" r="11" fill="#C93C3C" stroke="#fff" stroke-width="3"/>`;
+    if (o.hlPin) s += `<circle cx="${pxp.toFixed(1)}" cy="${pyp.toFixed(1)}" r="26" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
+  }
+  if (o.spin) s += `<g transform="translate(${cx} ${cy})">${dirArrow(R + 18, true, '#C93C3C')}</g>`;
+  if (bell != null) {
+    const tip = p.bellDown ? 70 : p.ring ? Math.sin(p.ring * 40) * 12 : 0;
+    s += `<g transform="translate(${bell + 26} ${cy + 26}) rotate(${tip.toFixed(1)} -26 0)"><rect x="-4" y="-80" width="8" height="80" fill="#5B6270"/><path d="M-26,-70 Q-26,-120 0,-122 Q26,-120 26,-70 L32,-60 L-32,-60Z" fill="#F2C94C" stroke="#B88A0C" stroke-width="3"/><circle cy="-54" r="7" fill="#B88A0C"/></g>`;
+    s += `<text x="${bell + 26}" y="${cy + 64}" text-anchor="middle" font-size="15" font-weight="800" fill="#5B6270" font-family="Nunito, sans-serif">${esc(L.bell)}</text>`;
+  }
+  if (o.blink) s += `<circle cx="${cx}" cy="${cy}" r="${R + 10}" fill="none" stroke="#F2A33A" stroke-width="6" class="blink"/>`;
+  return s;
+}
+
+// ---------- Crane (lesson 12) ----------
+const TOOLS = { tFast: { strength: 1 / 3, rate: 0.6, lock: false }, tStrong: { strength: 3, rate: 0.25, lock: false }, tWorm: { strength: 24, rate: 0.13, lock: true }, tRack: { strength: 1, rate: 0.35, lock: false } };
+const CRN = { tx: 330, top: 210, ground: 432, boomL: 300, aMin: -10, aMax: 28, hookBox: [40, 250], armBox: [40, 340] };
+function craneSVG(p, o = {}) {
+  const L = t(), { tx, top, ground, boomL } = CRN;
+  const aDeg = CRN.aMin + (CRN.aMax - CRN.aMin) * (p.val.boom || 0), a = (aDeg * Math.PI) / 180;
+  const tipX = tx + boomL * Math.cos(a), tipY = top - boomL * Math.sin(a);
+  const tipYTop = top - boomL * Math.sin((CRN.aMax * Math.PI) / 180);
+  let s = `<rect x="0" y="${ground}" width="784" height="16" fill="#CFC8BA"/>`;
+  // tower (lattice)
+  s += `<rect x="${tx - 22}" y="${top}" width="44" height="${ground - top}" fill="none" stroke="#F2A33A" stroke-width="6"/>`;
+  for (let y = top; y < ground - 10; y += 44) s += `<path d="M${tx - 22},${y} L${tx + 22},${y + 22} L${tx - 22},${y + 44}" fill="none" stroke="#F2A33A" stroke-width="4"/>`;
+  // target arm line and flag
+  if (!o.bare) {
+    const t2 = (CRN.aMax - 1.5) * Math.PI / 180;
+    s += `<line x1="${tx}" y1="${top}" x2="${(tx + (boomL + 30) * Math.cos(t2)).toFixed(1)}" y2="${(top - (boomL + 30) * Math.sin(t2)).toFixed(1)}" stroke="#1E8A4C" stroke-width="3" stroke-dasharray="8 6"/>`;
+    const fy = tipYTop + 70;
+    s += `<line x1="${tx + 160}" y1="${fy}" x2="${tx + boomL + 80}" y2="${fy}" stroke="#1E8A4C" stroke-width="3" stroke-dasharray="8 6"/><line x1="${tx + boomL + 80}" y1="${fy - 40}" x2="${tx + boomL + 80}" y2="${ground}" stroke="#1F2430" stroke-width="4"/><path d="M${tx + boomL + 82},${fy - 40} L${tx + boomL + 122},${fy - 28} L${tx + boomL + 82},${fy - 16}Z" fill="#1E8A4C"/>`;
+  }
+  // boom
+  if (!o.noBoom) {
+    s += `<g class="${p.shake.boom ? 'shake' : ''}"><g transform="rotate(${(-aDeg).toFixed(2)} ${tx} ${top})"><rect x="${tx - 10}" y="${top - 12}" width="${boomL + 20}" height="24" rx="6" fill="none" stroke="#F2A33A" stroke-width="5"/>`;
+    for (let x = tx; x < tx + boomL; x += 30) s += `<path d="M${x},${top - 12} L${x + 15},${top + 12} L${x + 30},${top - 12}" fill="none" stroke="#F2A33A" stroke-width="3"/>`;
+    s += `</g><circle cx="${tx}" cy="${top}" r="10" fill="#1F2430"/></g>`;
+  }
+  // rope and crate
+  if (!o.noRope && !o.noBoom) {
+    const rope = 300 - 240 * (p.val.hoist || 0);
+    const crTop = Math.min(tipY + rope, ground - 50);
+    s += `<g class="${p.shake.hoist ? 'shake' : ''}"><line x1="${tipX.toFixed(1)}" y1="${tipY.toFixed(1)}" x2="${tipX.toFixed(1)}" y2="${crTop.toFixed(1)}" stroke="#7A4D20" stroke-width="3"/><g transform="translate(${tipX.toFixed(1)} ${crTop.toFixed(1)})">${crate(60, 50)}</g></g>`;
+  }
+  if (o.hlTop) s += `<circle cx="${tx}" cy="${top}" r="34" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
+  if (o.upArrow) s += `<path d="M${tipX + 50},${tipY + 160} v-70 M${tipX + 40},${tipY + 100} l10,-12 l10,12" fill="none" stroke="#C93C3C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`;
+  // motor boxes with tool slots
+  if (!o.bare) for (const [f, pos, label] of [['hoist', CRN.hookBox, L.hookMotor], ['boom', CRN.armBox, L.armMotor]]) {
+    const [bx, by] = pos, tool = p.slots[f];
+    s += `<g><rect x="${bx}" y="${by}" width="200" height="70" rx="12" fill="#5B6270"/><path d="M${bx + 26} ${by + 18}l-10 16h10l-5 14 16-19h-10l5-11z" fill="#F2A33A"/>
+      <text x="${bx + 46}" y="${by + 22}" font-size="14" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">${esc(label)}</text>
+      <g data-mslot="${f}" style="cursor:pointer"><rect x="${bx + 46}" y="${by + 30}" width="140" height="32" rx="8" fill="${tool ? '#FFF6EA' : 'none'}" stroke="${tool ? '#F2A33A' : '#fff'}" stroke-width="2" stroke-dasharray="${tool ? '0' : '6 5'}"/>
+      ${tool ? `<g transform="translate(${bx + 52} ${by + 33})">${icon(tool, 34, 26).replace('<svg', '<svg x="0" y="0"')}</g><text x="${bx + 92}" y="${by + 51}" font-size="13" font-weight="800" fill="#1F2430" font-family="Nunito, sans-serif">${esc(L[tool])}</text>` : ''}</g></g>`;
+    if (o.blink && !tool) s += `<rect x="${bx - 6}" y="${by - 6}" width="212" height="82" rx="16" fill="none" stroke="#F2A33A" stroke-width="6" class="blink"/>`;
+    if (o.ghost && !tool) s += `<text x="${bx + 116}" y="${by + 51}" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito, sans-serif" class="pulse">${esc(L.tWorm)}?</text>`;
+    s += `<line x1="${bx + 200}" y1="${by + 35}" x2="${tx - 22}" y2="${f === 'hoist' ? top + 40 : top + 80}" stroke="#9AA3B2" stroke-width="3" stroke-dasharray="4 6"/>`;
+  }
+  return s;
 }
 
 // ---------- Top view (lesson 4) ----------
@@ -993,6 +1311,7 @@ function ideaPic() {
       <g id="ibox" transform="translate(${110 + r8 + r24 + 18} 220)">${crate(56, 50)}</g>
       <text x="300" y="${110 + r24 + 30}" text-anchor="end" font-family="Baloo 2, sans-serif" font-size="22" font-weight="800" fill="#1F2430"></text>`;
   }
+  if (k.kind === 'lever' || k.kind === 'slider' || k.kind === 'crane') return `<g transform="${k.kind === 'crane' ? 'translate(10 0) scale(.62)' : 'translate(-30 20) scale(.62)'}" id="ipic"></g>`;
   if (k.kind === 'worm') return `<g transform="translate(150 150)"><g id="iworm">${wormBody(0, 'iwc')}</g></g><g transform="translate(${150 + U / 2 + radius(24)} 150)"><g id="ig2">${gearSVG(24)}</g></g>${lbl(0, '')}
       <text x="150" y="240" text-anchor="middle" font-family="Baloo 2, sans-serif" font-size="20" font-weight="800" fill="#1F2430">1 \u21bb</text><text x="${150 + U / 2 + radius(24)}" y="270" text-anchor="middle" font-family="Baloo 2, sans-serif" font-size="20" font-weight="800" fill="#1F2430">1/24 \u21bb</text>`;
   if (k.kind === 'rack') return `<g transform="translate(180 150)"><g id="ig1">${gearSVG(24)}</g></g><g id="irack">${rackSVG(180 + radius(24), 40, 260)}</g>`;
@@ -1029,6 +1348,14 @@ function tickIdea(dt) {
     const cycle = (ideaA * 2.2) % 9, lift = cycle < 7 ? cycle * 12 : 84 - (cycle - 7) * 42;
     const box = document.getElementById('ibox'), rope = document.getElementById('irope');
     if (box) { const x = 110 + radius(8) + radius(24) + 18; box.setAttribute('transform', `translate(${x} ${220 - lift})`); rope.setAttribute('y2', 220 - lift); }
+  } else if (k.kind === 'lever' || k.kind === 'slider' || k.kind === 'crane') {
+    const g = document.getElementById('ipic');
+    if (g) {
+      const w = (Math.sin(ideaA * 1.5) + 1) / 2;
+      if (k.kind === 'lever') g.innerHTML = leverSVG({ pivot: 3, levA: w * LEV.maxA, round: 0, helpers: false }, { bare: true });
+      if (k.kind === 'slider') g.innerHTML = sliderSVG({ pinR: SLD.pins.pinEdge, theta: ideaA * 2, round: 0 }, { bare: true });
+      if (k.kind === 'crane') g.innerHTML = craneSVG({ slots: {}, val: { hoist: w, boom: (Math.sin(ideaA * 0.7) + 1) / 2 }, shake: {} }, { bare: true });
+    }
   } else if (k.kind === 'worm') {
     const wa = ideaA * 6, w = document.querySelector('#iworm .wthreads');
     if (w) w.setAttribute('transform', `translate(0 ${((((wa / TAU) * 14) % 14) + 14) % 14})`);
@@ -1057,7 +1384,8 @@ function renderPlay() {
   const LL = LS(), stack = !!LL.rounds;
   const items = [['axle', L.axle, ''], ['g24', L.gear + ' 24', L.big], ['g16', L.gear + ' 16', L.medium], ['g8', L.gear + ' 8', L.small], ['motor', L.motor, ''],
     ['crankS', L.crankS, L.oneHole], ['crankL', L.crankL, L.twoHoles], ...[2, 3, 4, 5, 6].map((n) => ['ax' + n, L.axle + ' ' + n, '']),
-    ['worm', L.worm, ''], ['b12', L.b12, L.slanted], ['b20', L.b20, L.slanted]]
+    ['worm', L.worm, ''], ['b12', L.b12, L.slanted], ['b20', L.b20, L.slanted], ['pivot', L.pivot, ''],
+    ['pinNear', L.pinNear, ''], ['pinMid', L.pinMid, ''], ['pinEdge', L.pinEdge, ''], ['tFast', L.tFast, ''], ['tStrong', L.tStrong, ''], ['tWorm', L.tWorm, ''], ['tRack', L.tRack, '']]
     .filter(([k]) => st[k] > 0)
     .map(([k, name, sub]) => (LL.type === 'corner' && k === 'g24' ? [k, L.flat24, L.flatW] : [k, name, sub]))
     .map(([k, name, sub]) => {
@@ -1073,7 +1401,8 @@ function renderPlay() {
       </section>
       <div class="controls">
         ${LL.noMotor ? '' : `<button class="toggle" data-act="motor" aria-pressed="${p.motorOn}"><span class="track"></span>${esc(L.motorBtn)}</button>
-        <button class="chip" data-act="flip">${flipIcon}${esc(L.flip)}</button>`}
+        ${LL.type === 'slider' ? '' : `<button class="chip" data-act="flip">${flipIcon}${esc(L.flip)}</button>`}`}
+        ${LL.holds ? LL.holds.map((f) => [1, -1].map((d) => `<button class="chip hold" data-hold="${f}:${d}">${d > 0 ? '\u25b2' : '\u25bc'} ${esc(f === 'hoist' ? L.hook : L.arm)}</button>`).join('')).join('') : ''}
         <button class="chip" data-act="helpers" aria-pressed="${p.helpers}">${eyeIcon}${esc(L.helpers)}</button>
         <span class="spacer"></span>
         <button class="btn big" data-act="test">${esc(L.test)}</button>
@@ -1103,6 +1432,13 @@ function drawBoard() {
   const svg = document.getElementById('bsvg');
   if (!svg) return;
   const p = S.play, an = S.an, LL = LS();
+  if (LL.draw) {
+    const pr = S.hintLevel >= 2 && !S.win ? LL.check(p, S.an || {}) : null;
+    let blinkHole = null;
+    if (LL.type === 'lever' && pr && pr !== 'push') blinkHole = p.round === 0 ? 2 : 5;
+    svg.innerHTML = LL.draw({ ...p, helpers: p.helpers }, { blink: !!pr, blinkHole, ghost: S.hintLevel >= 3 && !S.win });
+    return;
+  }
   if (LL.type === 'corner') {
     svg.innerHTML = cornerSVG(p.slotA, p.slotB, { labels: p.helpers, blink: S.hintLevel >= 2 && !S.win });
     return;
@@ -1227,6 +1563,7 @@ function buildScene(cfg, label) {
   // Side view of a 9-hole beam.
   const bx = 110, by = 128, hx = (n) => bx + n * U;
   let s = `<svg class="scene" viewBox="0 0 760 270" role="img" aria-label="${esc(label)}">`;
+  if (cfg.svg) return s.replace('viewBox="0 0 760 270"', 'viewBox="0 0 784 470"') + cfg.svg() + '</svg>';
   if (cfg.corner) return s + `<g transform="translate(150 -12) scale(.62)">${cornerSVG(cfg.corner[0], cfg.corner[1], { noAxles: cfg.noAxles, hlMeet: cfg.hlMeet })}</g></svg>`;
   if (cfg.stack) return s + `<g transform="translate(110 0) scale(.6)">${stackSVG(cfg.stack, cfg.len, { nums: true })}</g></svg>`;
   if (cfg.measure) {
@@ -1363,7 +1700,7 @@ app.addEventListener('click', (e) => {
     }
     case 'hint': S.hintLevel = Math.min(3, S.hintLevel + 1); S.panel = 'hint'; renderPlay(); break;
     case 'close': S.panel = null; renderPlay(); break;
-    case 'nextRound': p.round++; p.axleLen = null; p.slotA = null; p.slotB = null; S.panel = null; S.fails = 0; S.hintLevel = 0; renderPlay(); break;
+    case 'nextRound': p.round++; p.axleLen = null; p.slotA = null; p.slotB = null; if (LS().resetRound) LS().resetRound(p); S.panel = null; S.fails = 0; S.hintLevel = 0; renderPlay(); break;
     case 'have': S.build.have[v] = !S.build.have[v]; renderBuild(); break;
     case 'bnext': {
       S.build.i++;
@@ -1395,6 +1732,7 @@ function overBoard(cx, cy) {
 function tryDrop(kind, x, y) {
   const p = S.play, L = t();
   if (/^ax\d$/.test(kind)) { p.axleLen = +kind[2]; S.panel = null; renderPlay(); return; }
+  if (LS().drop) { if (LS().drop(p, kind, x, y) !== false) { S.panel = null; renderPlay(); } return; }
   if (LS().type === 'corner') {
     // Drop near the motor axle end = slot A, near the fan axle end = slot B. A tap fills the first empty slot.
     const slot = x == null ? (!p.slotA ? 'A' : 'B') : (x < 470 || y > 250 ? 'A' : 'B');
@@ -1463,6 +1801,8 @@ function removeSel() {
 
 document.addEventListener('pointerdown', (e) => {
   if (S.screen !== 'lesson' || S.step !== 1 || S.panel || S.win) return;
+  const hb = e.target.closest('[data-hold]');
+  if (hb) { e.preventDefault(); const [f, d] = hb.dataset.hold.split(':'); S.play.hold = { f, dir: +d, warned: false }; hb.classList.add('on'); return; }
   const item = e.target.closest('.titem');
   if (item) { e.preventDefault(); drag = { kind: item.dataset.part, x0: e.clientX, y0: e.clientY, moved: false, el: null }; return; }
   const svg = document.getElementById('bsvg');
@@ -1471,6 +1811,14 @@ document.addEventListener('pointerdown', (e) => {
   const p = S.play;
   if (e.target.closest('[data-del]')) { removeSel(); return; }
   if (LS().type) {
+    if (LS().type === 'lever') {
+      const lv = e.target.closest('[data-lever]'), hole = e.target.closest('[data-hole]');
+      if (lv) { p.levDrag = true; p.levWarned = false; try { svg.setPointerCapture(e.pointerId); } catch (_) { /* ignore */ } return; }
+      if (hole && p.levA === 0) { const h = +hole.dataset.hole; if (h >= 1 && h <= 9) { setPivot(p, h); drawBoard(); } }
+      return;
+    }
+    const ms = e.target.closest('[data-mslot]');
+    if (ms) { p.slots[ms.dataset.mslot] = null; drawBoard(); return; }
     // Corner lesson: tap a placed gear to take it off.
     const sl = e.target.closest('[data-cslot]');
     if (sl) { S.play['slot' + sl.dataset.cslot] = null; renderPlay(); }
@@ -1510,6 +1858,21 @@ document.addEventListener('pointermove', (e) => {
     if (drag.el) { drag.el.style.left = e.clientX + 'px'; drag.el.style.top = e.clientY + 'px'; }
     return;
   }
+  if (S.play && S.play.levDrag) {
+    const p = S.play, r = LS().rounds[p.round], pt = svgPt(e.clientX, e.clientY);
+    const px = LEV.x0 + p.pivot * U;
+    let a = Math.atan2(pt.y - LEV.y, pt.x - px);
+    a = Math.max(0, Math.min(LEV.maxA, a));
+    if ((r.w * p.pivot) / (10 - p.pivot) > 1.001) {
+      p.shakeBox = a > 0.05; p.levA = 0;
+      if (a > 0.15 && !p.levWarned) { p.levWarned = true; toast(t().tooHeavyPush); }
+    } else {
+      p.levA = a; p.shakeBox = false;
+      if (p.pivot * U * Math.sin(a) >= r.flag - 1) p.reached = true;
+    }
+    drawBoard();
+    return;
+  }
   if (turn) {
     const g = turn.g, an = S.an, inf = an.info[g.id];
     const pt = svgPt(e.clientX, e.clientY), a = Math.atan2(pt.y - g.y, pt.x - g.x);
@@ -1527,6 +1890,8 @@ document.addEventListener('pointermove', (e) => {
 });
 
 document.addEventListener('pointerup', (e) => {
+  if (S.play && S.play.hold) { S.play.hold = null; document.querySelectorAll('.hold.on').forEach((b) => b.classList.remove('on')); }
+  if (S.play && S.play.levDrag) { S.play.levDrag = false; S.play.shakeBox = false; drawBoard(); }
   if (drag) {
     const d = drag; drag = null;
     if (d.el) d.el.remove();
@@ -1535,7 +1900,7 @@ document.addEventListener('pointerup', (e) => {
       // Tap on a tray part: place it on the next ghost spot if it matches.
       const ng = nextGhost(S.play);
       const key = ng ? (ng.type === 'gear' ? 'g' + ng.teeth : ng.type) : null;
-      if (/^ax\d$/.test(d.kind) || LS().type === 'corner') tryDrop(d.kind, null, null);
+      if (/^ax\d$/.test(d.kind) || LS().type === 'corner' || LS().drop) tryDrop(d.kind, null, null);
       else if (key === d.kind) tryDrop(d.kind, holeX(ng.hx), holeY(ng.hy)); else toast(t().dragTip);
     }
     return;
@@ -1559,6 +1924,7 @@ function frame(now) {
   const dt = Math.min(0.05, (now - lastT) / 1000); lastT = now;
   if (S.screen === 'lesson' && S.step === 0) tickIdea(dt);
   if (S.screen === 'lesson' && S.step === 1 && LS().type === 'corner') tickCorner(dt, S.play.slotA, S.play.slotB);
+  if (S.screen === 'lesson' && S.step === 1 && LS().tick && !S.win) LS().tick(S.play, dt);
   if (S.screen === 'lesson' && S.step === 1 && S.an) {
     const p = S.play, an = S.an;
     const mg = an.motorGear;
