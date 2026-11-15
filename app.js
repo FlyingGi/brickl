@@ -704,6 +704,7 @@ function renderBuild() {
 
 function render() {
   document.documentElement.lang = S.lang;
+  document.body.classList.toggle('playing', S.screen === 'lesson' && S.step === 1);
   if (S.screen === 'map') return renderMap();
   if (S.step === 0) return renderIdea();
   if (S.step === 1) return renderPlay();
