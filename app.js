@@ -39,7 +39,7 @@ const T = {
     lessons: ['Fast gears', 'Strong gears', 'Flip it', 'Axles and bushes', 'Gear chain', 'Crank and winch', 'Worm gear', 'Up and down', 'Turn a corner', 'Levers', 'Push and pull', 'Crane', 'Elevator', 'Forklift', 'Steering', 'Plane controls'],
     lesson: 'Lesson', start: 'Start', soon: 'Coming soon', doneTag: 'Done',
     steps: ['Idea', 'Play', 'Build'],
-    next: 'Next', back: 'Back', listen: 'Read aloud',
+    next: 'Next', back: 'Back', listen: 'Read aloud', stopAudio: 'Stop reading', home: 'Home',
     parts: 'Parts', dragTip: 'Drag parts onto the board',
     axle: 'Axle', gear: 'Gear', motor: 'Motor', big: 'big', small: 'small', medium: 'medium', left: 'left',
     goal: 'GOAL', motorBtn: 'Motor', flip: 'Flip', helpers: 'Helpers', test: 'Test it!', hint: 'Hint',
@@ -157,7 +157,7 @@ const T = {
     lessons: ['Schnelle Zahnräder', 'Starke Zahnräder', 'Umdrehen', 'Achsen und Buchsen', 'Zahnrad-Kette', 'Kurbel und Seilwinde', 'Schneckengetriebe', 'Hoch und runter', 'Um die Ecke', 'Hebel', 'Schieben und ziehen', 'Kran', 'Aufzug', 'Gabelstapler', 'Lenkung', 'Flugzeug-Steuerung'],
     lesson: 'Lektion', start: 'Los', soon: 'Kommt bald', doneTag: 'Geschafft',
     steps: ['Idee', 'Spielen', 'Bauen'],
-    next: 'Weiter', back: 'Zurück', listen: 'Vorlesen',
+    next: 'Weiter', back: 'Zurück', listen: 'Vorlesen', stopAudio: 'Vorlesen stoppen', home: 'Startseite',
     parts: 'Teile', dragTip: 'Zieh Teile aufs Brett',
     axle: 'Achse', gear: 'Zahnrad', motor: 'Motor', big: 'groß', small: 'klein', medium: 'mittel', left: 'übrig',
     goal: 'ZIEL', motorBtn: 'Motor', flip: 'Umdrehen', helpers: 'Helfer', test: 'Testen!', hint: 'Tipp',
@@ -652,15 +652,32 @@ function used(p) {
 }
 
 // ---------- Speech ----------
+let speaking = false;
+function setSpeaking(on) {
+  speaking = on;
+  document.querySelectorAll('.speak').forEach((b) => { b.innerHTML = speakIcon(); b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', on ? t().stopAudio : t().listen); });
+}
+function stopSpeech() {
+  try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+  speaking = false;
+}
 function speak(text) {
   try {
     if (!('speechSynthesis' in window)) return;
+    if (speaking) { stopSpeech(); setSpeaking(false); return; }
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text.replace(/\n/g, ' ').replace(/★/g, ''));
+    const u = new SpeechSynthesisUtterance(text.replace(/\n/g, ' ').replace(/\u2605/g, ''));
     u.lang = S.lang === 'de' ? 'de-DE' : 'en-GB'; u.rate = 0.9;
+    u.onend = u.onerror = () => { if (speaking) setSpeaking(false); };
     speechSynthesis.speak(u);
-  } catch (e) { /* no voice available */ }
+    setSpeaking(true);
+  } catch (e) { setSpeaking(false); }
 }
+const playIcon = `<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#1F2430"/></svg>`;
+const stopIcon = `<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2.5" fill="#1F2430"/></svg>`;
+const speakIcon = () => (speaking ? stopIcon : playIcon);
+const speakBtn = () => `<button class="speak" data-act="speak" aria-pressed="${speaking}" aria-label="${esc(speaking ? t().stopAudio : t().listen)}">${speakIcon()}</button>`;
+const homeIcon = `<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7M6 9.5V20h4.5v-5.5h3V20H18V9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const speakerIcon = `<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#1F2430"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round"/></svg>`;
 const logo = `<svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="2" y="10" width="32" height="22" rx="5" fill="#F2A33A"/><rect x="7" y="4" width="8" height="8" rx="3" fill="#F2A33A"/><rect x="21" y="4" width="8" height="8" rx="3" fill="#F2A33A"/><circle cx="12" cy="21" r="4" fill="#fff"/><circle cx="24" cy="21" r="4" fill="#fff"/></svg>`;
 const checkIcon = (c = '#1E6E40') => `<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -678,7 +695,7 @@ function header(inLesson) {
   const langSw = `<div class="lang" role="group" aria-label="Language / Sprache"><button data-act="lang" data-v="en" aria-pressed="${S.lang === 'en'}">EN</button><button data-act="lang" data-v="de" aria-pressed="${S.lang === 'de'}">DE</button></div>`;
   if (!inLesson) return `<header class="top"><button class="logo" data-act="map" aria-label="BrickL">${logo}<span>BrickL</span></button><span style="color:var(--muted)">${esc(L.tagline)}</span><span class="spacer"></span>${langSw}</header>`;
   const steps = L.steps.map((s, i) => `<button class="step ${i === S.step ? 'on' : i < S.step ? 'done' : ''}" data-act="step" data-v="${i}" ${i === S.step ? 'aria-current="step"' : ''}>${i < S.step ? checkIcon() : i + 1 + ' '}${esc(s)}</button>`).join('');
-  return `<header class="top"><button class="logo" data-act="map" aria-label="${esc(L.back)}">${logo}<span>BrickL</span></button>
+  return `<header class="top"><button class="btn home" data-act="map" aria-label="${esc(L.home)}" title="${esc(L.home)}">${homeIcon}</button><button class="logo" data-act="map" aria-label="${esc(L.home)}">${logo}<span>BrickL</span></button>
     <div class="lesson-name"><small>${esc(L.lesson)} ${S.li + 1}</small><b>${esc(L.lessons[S.li])}</b></div>
     <nav class="steps" aria-label="Steps">${steps}</nav>${langSw}
     ${S.step === 1 ? `<button class="btn" data-act="hint">${bulb}${esc(L.hint)}</button>` : ''}</header>`;
@@ -730,7 +747,7 @@ function renderIdea() {
   const L = t(), TL = tl();
   app.innerHTML = header(true) + `<main class="idea">
     <svg class="pic" viewBox="0 0 460 300" role="img" aria-label="${esc(TL.idea)}">${ideaPic()}</svg>
-    <div class="say"><div class="row"><button class="speak" data-act="speak" aria-label="${esc(L.listen)}">${speakerIcon}</button></div>
+    <div class="say"><div class="row">${speakBtn()}</div>
       <p>${esc(TL.idea)}</p><p class="sub">${esc(TL.ideaSub)}</p>
       <div class="row"><button class="btn big" data-act="step" data-v="1">${esc(L.next)} →</button></div></div>
   </main>`;
@@ -966,7 +983,7 @@ function renderBuild() {
   } else if (B.i <= nSteps) {
     const si = B.i - 1;
     main = `<div class="dots" aria-hidden="true">${TL.b.map((_, k) => `<i class="${k === si ? 'on' : ''}"></i>`).join('')}</div>
-      <p class="instr"><button class="speak" data-act="speak" aria-label="${esc(L.listen)}">${speakerIcon}</button><span>${si + 1}. ${esc(TL.b[si])}</span></p>${buildScene(BD.scenes[si], TL.b[si])}
+      <p class="instr">${speakBtn()}<span>${si + 1}. ${esc(TL.b[si])}</span></p>${buildScene(BD.scenes[si], TL.b[si])}
       <div class="row"><button class="btn" data-act="bprev">← ${esc(L.back)}</button><button class="btn big" data-act="bnext">${esc(L.next)} →</button></div>`;
   } else if (B.i === nSteps + 1) {
     const ok = B.answer === BD.correct;
@@ -974,7 +991,7 @@ function renderBuild() {
     const opts = BD.answers === 'numbers'
       ? `<div class="answers">${(BD.nums || [1, 2, 3, 4]).map((n) => `<button data-act="answer" data-v="${n}" class="${B.answer === n ? (n === BD.correct ? 'right' : 'wrong') : ''}">${n}</button>`).join('')}</div>`
       : `<div class="answers">${TL.opts.map((txt, n) => `<button data-act="answer" data-v="${n}" class="wide ${B.answer === n ? (n === BD.correct ? 'right' : 'wrong') : ''}">${icon(BD.icons[n], 80, 70)}<span>${esc(txt)}</span></button>`).join('')}</div>`;
-    main = `<p class="instr"><button class="speak" data-act="speak" aria-label="${esc(L.listen)}">${speakerIcon}</button><span>${esc(TL.testQ)}</span></p>${opts}
+    main = `<p class="instr">${speakBtn()}<span>${esc(TL.testQ)}</span></p>${opts}
       <p class="feedback" role="status">${esc(fb)}</p>
       <div class="row"><button class="btn" data-act="bprev">← ${esc(L.back)}</button>${ok ? `<button class="btn big" data-act="bnext">${esc(L.finish)} →</button>` : ''}</div>`;
   } else {
@@ -1019,6 +1036,7 @@ app.addEventListener('click', (e) => {
   const b = e.target.closest('[data-act]');
   if (!b) return;
   const act = b.dataset.act, v = b.dataset.v, TL = tl(), p = S.play;
+  if (['map', 'open', 'step', 'lang', 'bnext', 'bprev'].includes(act)) stopSpeech();
   switch (act) {
     case 'lang': S.lang = v; save(); render(); break;
     case 'map': S.screen = 'map'; render(); break;
