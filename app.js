@@ -52,6 +52,10 @@ const T = {
     beam9: 'Beam, 9 holes', axle4: 'Axle, 4 long', g24: 'Gear, 24 teeth', g8: 'Gear, 8 teeth', g16: 'Gear, 16 teeth', bush: 'Bush', string: 'String', toy: 'A small toy',
     front: 'front', backSide: 'back', finish: 'Finish', done: 'Lesson done!', toMap: 'Back to the map', nextLesson: 'Next lesson',
     disclaimer: 'BrickL is not made by, sponsored by or connected to the LEGO Group.',
+    crankS: 'Crank, short', crankL: 'Crank, long', oneHole: '1 hole', twoHoles: '2 holes',
+    dropCrank: 'The crank goes on an axle.', oneCrank: 'Only one crank. Remove the other one first.', atFlag: 'At the flag! Press \u201cTest it!\u201d',
+    task: 'Task', fits: 'It fits!', nextTask: 'Next task', wall: 'wall',
+    axles: 'Axles, different lengths', beam3: 'Short beam, 3 holes', pin: 'Pin', l2build: 'Your build from lesson 2',
     L: [
       {
         idea: 'A big gear turns a small gear.\nThe small gear spins fast!',
@@ -101,6 +105,50 @@ const T = {
         right: 'Yes! With a gear in the middle, it turns the same way.', wrong: 'Look again. A sticker on the last gear helps.',
         tool: 'New tool: Flip direction',
       },
+      {
+        idea: 'An axle must go through every part.\nCount the parts. That is the axle length!',
+        ideaSub: 'Gear + beam + bush = 3 parts. So you need an axle 3. This picture looks from the top.',
+        goal: 'Pick the axle that fits. It must go through all the parts, but not hit the wall.',
+        prob: {
+          pick: 'Drag an axle onto the parts.', short: 'Too short! A part falls off. Count the parts.', long: 'Too long! It hits the wall. Try a shorter axle.',
+        },
+        winSub: 'Count the parts, and you know the axle length.',
+        b: ['Find your axles. Lay each axle next to a beam and count the holes. That is the axle length.', 'Push an axle 3 through a beam. Put a gear on the front and a bush on the back.', 'Now try an axle 2. The bush does not fit! The axle is too short.'],
+        testQ: 'Gear + beam + beam + bush. How long must the axle be?',
+        right: 'Yes! 4 parts, so an axle 4.', wrong: 'Count the parts again: gear, beam, beam, bush.',
+        tool: 'New tool: The right axle',
+      },
+      {
+        idea: 'Gears in the middle don\u2019t change the speed.\nOnly the first and the last gear count!',
+        ideaSub: 'Big gear first, small gear last: 3 times faster. The middle gear just passes the turning on.',
+        goal: 'The \u2605 gear is far away. Make it spin 3 times faster than the motor gear.',
+        prob: {
+          motorGear: 'Put a gear on the motor axle. Big or small?', starGear: 'Put a gear on the \u2605 axle.', axle: 'The gap is too wide. Add axles in between.',
+          jam: 'Two gears push into each other. Move one away.', touch: 'Do all the gears touch? Fill the gap with gears.', on: 'Switch the motor on!',
+          ratio: 'Look at the speed numbers. Only the first and the last gear count: first big, last small.',
+        },
+        winSub: 'The middle gears just pass the turning on. First big, last small: 3 times faster!',
+        b: ['Take the beam. Count the holes from the left.', 'Push axles into holes 1, 4, 7 and 9.', 'Slide big gears onto the axles in holes 1, 4 and 7.', 'Slide the small gear onto the axle in hole 9.', 'Put a bush on the back of each axle.'],
+        testQ: 'Test it! Turn the first gear 1 time, slowly. How many times does the small gear turn?',
+        right: 'Yes! 3 times, just like with 2 gears. The middle gears don\u2019t change the speed.', wrong: 'Count again, slowly. A sticker on the small gear helps.',
+        tool: 'New tool: Gear chain',
+      },
+      {
+        idea: 'A crank is a handle that turns an axle.\nA long crank makes turning easier!',
+        ideaSub: 'Your hand moves farther, but pushes less. A winch winds up a string to lift things.',
+        goal: 'Lift the heavy box to the flag. Turn the crank with your finger.',
+        prob: {
+          crank: 'Put a crank on the axle with the string.', heavy: 'Too heavy! Try a longer crank. Or let a small gear turn a big gear.',
+          touch: 'The crank must turn the axle with the string. Do the gears touch?', jam: 'Two gears push into each other. Move one away.',
+          turn: 'Now turn the crank with your finger until the box reaches the flag.',
+        },
+        winSub: 'Crank and winch: turn, turn, turn, and the box goes up!',
+        b: ['Take your build from lesson 2: small gear, big gear, string and toy.', 'Slide a short beam onto the front of the small gear\u2019s axle. That is the crank.', 'Push a pin into the last hole of the short beam. That is the handle.', 'Turn the handle. The string winds up and lifts the toy!'],
+        testQ: 'Test it! Hold the crank near the axle. Then hold it at the very end. Where is it easier to turn?',
+        opts: ['Near the axle', 'At the end'],
+        right: 'Yes! At the end your hand moves farther, but it is easier.', wrong: 'Try both again. Where do you push less?',
+        tool: 'New tool: Crank and winch',
+      },
     ],
   },
   de: {
@@ -122,6 +170,10 @@ const T = {
     beam9: 'Balken, 9 Löcher', axle4: 'Achse, 4 lang', g24: 'Zahnrad, 24 Zähne', g8: 'Zahnrad, 8 Zähne', g16: 'Zahnrad, 16 Zähne', bush: 'Buchse', string: 'Schnur', toy: 'Ein kleines Spielzeug',
     front: 'vorne', backSide: 'hinten', finish: 'Fertig', done: 'Lektion geschafft!', toMap: 'Zurück zur Karte', nextLesson: 'Nächste Lektion',
     disclaimer: 'BrickL ist kein Produkt der LEGO Gruppe und wird von ihr weder unterstützt noch gesponsert.',
+    crankS: 'Kurbel, kurz', crankL: 'Kurbel, lang', oneHole: '1 Loch', twoHoles: '2 Löcher',
+    dropCrank: 'Die Kurbel kommt auf eine Achse.', oneCrank: 'Nur eine Kurbel. Nimm erst die andere weg.', atFlag: 'An der Fahne! Drück auf \u201eTesten!\u201c',
+    task: 'Aufgabe', fits: 'Passt!', nextTask: 'Nächste Aufgabe', wall: 'Wand',
+    axles: 'Achsen, verschieden lang', beam3: 'Kurzer Balken, 3 Löcher', pin: 'Pin', l2build: 'Dein Bau aus Lektion 2',
     L: [
       {
         idea: 'Ein großes Zahnrad dreht ein kleines.\nDas kleine dreht sich schnell!',
@@ -170,6 +222,50 @@ const T = {
         opts: ['Wie ein Uhrzeiger', 'Andersherum'],
         right: 'Ja! Mit einem Zahnrad in der Mitte dreht es sich gleich herum.', wrong: 'Schau nochmal. Ein Aufkleber auf dem letzten Zahnrad hilft.',
         tool: 'Neues Werkzeug: Richtung umdrehen',
+      },
+      {
+        idea: 'Eine Achse muss durch alle Teile gehen.\nZähl die Teile. So lang muss die Achse sein!',
+        ideaSub: 'Zahnrad + Balken + Buchse = 3 Teile. Also brauchst du eine Achse 3. Dieses Bild zeigt alles von oben.',
+        goal: 'Such die passende Achse aus. Sie muss durch alle Teile gehen, darf aber nicht an die Wand stoßen.',
+        prob: {
+          pick: 'Zieh eine Achse zu den Teilen.', short: 'Zu kurz! Ein Teil fällt ab. Zähl die Teile.', long: 'Zu lang! Sie stößt an die Wand. Probier eine kürzere Achse.',
+        },
+        winSub: 'Zähl die Teile, dann weißt du, wie lang die Achse sein muss.',
+        b: ['Such deine Achsen. Leg jede Achse neben einen Balken und zähl die Löcher. So lang ist die Achse.', 'Steck eine Achse 3 durch einen Balken. Vorne kommt ein Zahnrad drauf, hinten eine Buchse.', 'Probier jetzt eine Achse 2. Die Buchse passt nicht mehr! Die Achse ist zu kurz.'],
+        testQ: 'Zahnrad + Balken + Balken + Buchse. Wie lang muss die Achse sein?',
+        right: 'Ja! 4 Teile, also eine Achse 4.', wrong: 'Zähl die Teile nochmal: Zahnrad, Balken, Balken, Buchse.',
+        tool: 'Neues Werkzeug: Die richtige Achse',
+      },
+      {
+        idea: 'Zahnräder in der Mitte ändern die Geschwindigkeit nicht.\nNur das erste und das letzte zählen!',
+        ideaSub: 'Großes Zahnrad zuerst, kleines zuletzt: 3-mal schneller. Das mittlere gibt das Drehen nur weiter.',
+        goal: 'Das \u2605-Zahnrad ist weit weg. Lass es 3-mal schneller drehen als das Motor-Zahnrad.',
+        prob: {
+          motorGear: 'Steck ein Zahnrad auf die Motor-Achse. Groß oder klein?', starGear: 'Steck ein Zahnrad auf die \u2605-Achse.', axle: 'Die Lücke ist zu groß. Setz Achsen dazwischen.',
+          jam: 'Zwei Zahnräder drücken ineinander. Schieb eins weg.', touch: 'Berühren sich alle Zahnräder? Füll die Lücke mit Zahnrädern.', on: 'Schalte den Motor an!',
+          ratio: 'Schau auf die Zahlen. Nur das erste und das letzte Zahnrad zählen: zuerst groß, zuletzt klein.',
+        },
+        winSub: 'Die mittleren Zahnräder geben das Drehen nur weiter. Zuerst groß, zuletzt klein: 3-mal schneller!',
+        b: ['Nimm den Balken. Zähl die Löcher von links.', 'Steck Achsen in Loch 1, 4, 7 und 9.', 'Schieb große Zahnräder auf die Achsen in Loch 1, 4 und 7.', 'Schieb das kleine Zahnrad auf die Achse in Loch 9.', 'Steck hinten auf jede Achse eine Buchse.'],
+        testQ: 'Teste es! Dreh das erste Zahnrad 1-mal, ganz langsam. Wie oft dreht sich das kleine?',
+        right: 'Ja! 3-mal, genau wie mit 2 Zahnrädern. Die mittleren ändern die Geschwindigkeit nicht.', wrong: 'Zähl nochmal, ganz langsam. Ein Aufkleber am kleinen Zahnrad hilft.',
+        tool: 'Neues Werkzeug: Zahnrad-Kette',
+      },
+      {
+        idea: 'Eine Kurbel ist ein Griff, der eine Achse dreht.\nMit einer langen Kurbel geht es leichter!',
+        ideaSub: 'Deine Hand macht einen längeren Weg, muss aber weniger drücken. Eine Seilwinde wickelt eine Schnur auf und hebt Dinge hoch.',
+        goal: 'Heb die schwere Kiste bis zur Fahne. Dreh die Kurbel mit dem Finger.',
+        prob: {
+          crank: 'Steck eine Kurbel auf die Achse mit der Schnur.', heavy: 'Zu schwer! Probier eine längere Kurbel. Oder lass ein kleines Zahnrad ein großes drehen.',
+          touch: 'Die Kurbel muss die Achse mit der Schnur drehen. Berühren sich die Zahnräder?', jam: 'Zwei Zahnräder drücken ineinander. Schieb eins weg.',
+          turn: 'Jetzt dreh die Kurbel mit dem Finger, bis die Kiste an der Fahne ist.',
+        },
+        winSub: 'Kurbel und Seilwinde: drehen, drehen, drehen, und die Kiste geht hoch!',
+        b: ['Nimm deinen Bau aus Lektion 2: kleines Zahnrad, großes Zahnrad, Schnur und Spielzeug.', 'Steck einen kurzen Balken vorne auf die Achse vom kleinen Zahnrad. Das ist die Kurbel.', 'Steck einen Pin in das letzte Loch vom kurzen Balken. Das ist der Griff.', 'Dreh am Griff. Die Schnur wickelt sich auf und hebt das Spielzeug!'],
+        testQ: 'Teste es! Halt die Kurbel nah an der Achse fest. Dann ganz am Ende. Wo lässt sie sich leichter drehen?',
+        opts: ['Nah an der Achse', 'Ganz am Ende'],
+        right: 'Ja! Am Ende macht deine Hand einen längeren Weg, aber es geht leichter.', wrong: 'Probier beides nochmal. Wo musst du weniger drücken?',
+        tool: 'Neues Werkzeug: Kurbel und Seilwinde',
       },
     ],
   },
@@ -294,7 +390,106 @@ const LESSONS = [
     },
     badge: 'g16',
   },
+  { // 4 Axles and bushes (top view puzzle)
+    type: 'stack', noMotor: true,
+    rounds: [['gear', 'beam', 'bush'], ['gear', 'beam', 'beam', 'bush'], ['bush', 'beam', 'gear', 'beam', 'bush']],
+    stock: { ax2: 1, ax3: 1, ax4: 1, ax5: 1, ax6: 1 }, reusable: true,
+    fixed: { axles: [], motor: null }, ghosts: [],
+    check(p) {
+      const need = this.rounds[p.round].length;
+      if (p.axleLen == null) return 'pick';
+      if (p.axleLen < need) return 'short';
+      if (p.axleLen > need) return 'long';
+      return null;
+    },
+    target() { return null; },
+    idea: { kind: 'stack' },
+    build: {
+      parts: [['beam9', 2], ['axles', 3], ['g24', 1], ['bush', 1]],
+      scenes: [{ measure: true }, { stack: ['gear', 'beam', 'bush'], len: 3 }, { stack: ['gear', 'beam', 'bush'], len: 2 }],
+      answers: 'numbers', nums: [2, 3, 4, 5], correct: 4,
+    },
+    badge: 'ax4',
+  },
+  { // 5 Gear chain
+    stock: { axle: 2, g8: 2, g16: 1, g24: 3, motor: 0 },
+    fixed: { axles: [{ id: 'm', hx: 1, hy: 3, fixed: true }, { id: 'star', hx: 9, hy: 3, fixed: true, star: true }], motor: 'm' },
+    ghosts: [{ type: 'gear', teeth: 24, hx: 1, hy: 3 }, { type: 'axle', hx: 4, hy: 3 }, { type: 'gear', teeth: 24, hx: 4, hy: 3 }, { type: 'axle', hx: 7, hy: 3 }, { type: 'gear', teeth: 24, hx: 7, hy: 3 }, { type: 'gear', teeth: 8, hx: 9, hy: 3 }],
+    check(p, an) {
+      const mg = an.motorGear, star = gearOnAxle(an, 'star');
+      if (!mg) return 'motorGear';
+      if (!star) return 'starGear';
+      if (an.info[mg.id].jam) return 'jam';
+      if (an.info[star.id].root !== mg.id) return p.axles.length < 4 ? 'axle' : 'touch';
+      if (!p.motorOn) return 'on';
+      if (Math.abs(Math.abs(an.info[star.id].k) - 3) > 1e-6) return 'ratio';
+      return null;
+    },
+    target(prob, an) {
+      if (prob === 'jam') return firstJam(an);
+      if (prob === 'on') return null;
+      if (prob === 'motorGear' || prob === 'ratio') return at(1, 3);
+      if (prob === 'starGear') return at(9, 3);
+      return at(4, 3);
+    },
+    idea: { kind: 'chain' },
+    build: {
+      parts: [['beam9', 1], ['axle4', 4], ['g24', 3], ['g8', 1], ['bush', 4]],
+      scenes: [
+        { hlBeam: true },
+        { axles: [0, 3, 6, 8], hl: [[0, 24], [3, 24], [6, 24], [8, 24]] },
+        { axles: [8], gears: [[0, 24], [3, 24], [6, 24]], hl: [[0, 96], [3, 96], [6, 96]] },
+        { gears: [[0, 24], [3, 24], [6, 24], [8, 8]], hl: [[8, 40]] },
+        { gears: [[0, 24], [3, 24], [6, 24], [8, 8]], inset: true },
+      ],
+      answers: 'numbers', correct: 3,
+    },
+    badge: 'g24',
+  },
+  { // 6 Crank and winch
+    noMotor: true, guided: false, strength: 1.9, liftRate: 22,
+    stock: { axle: 1, g8: 1, g16: 1, g24: 1, motor: 0, crankS: 1, crankL: 1 },
+    fixed: { axles: [{ id: 'load', hx: 6, hy: 1, fixed: true, load: true }], motor: null },
+    load: 'load',
+    ghosts: [{ type: 'crank', hx: 6, hy: 1, len: 2 }],
+    check(p, an) {
+      if (!p.crank) return 'crank';
+      const gc = gearOnAxle(an, p.crank.axle), gl = an.loadGear;
+      if (!gc || !gl) return 'touch';
+      if (an.info[gc.id].jam) return 'jam';
+      if (an.info[gc.id].root !== an.info[gl.id].root) return 'touch';
+      if (!canTurn(an, gc)) return 'heavy';
+      if (p.lift < MAX_LIFT - 2) return 'turn';
+      return null;
+    },
+    target(prob, an) {
+      if (prob === 'jam') return firstJam(an);
+      if (prob === 'turn') return null;
+      if (prob === 'touch') return at(4, 1);
+      return at(6, 1);
+    },
+    idea: { kind: 'crank' },
+    build: {
+      parts: [['l2build', 1], ['beam3', 1], ['pin', 1]],
+      scenes: [
+        { gears: [[1, 8], [3, 24]], string: 3, noNums: true },
+        { gears: [[1, 8], [3, 24]], string: 3, noNums: true, crank: { hole: 1, hl: 'arm' } },
+        { gears: [[1, 8], [3, 24]], string: 3, noNums: true, crank: { hole: 1, hl: 'pin' } },
+        { gears: [[1, 8], [3, 24]], string: 3, stringLen: 50, noNums: true, crank: { hole: 1, turn: true } },
+      ],
+      answers: 'choice', icons: ['near', 'far'], correct: 1,
+    },
+    badge: 'crankL',
+  },
 ];
+// Can a hand (or crank) turn gear g with the heavy box on it?
+function canTurn(an, g) {
+  if (!an.loadGear) return true;
+  const inf = an.info[g.id], il = an.info[an.loadGear.id];
+  if (!inf || inf.root !== il.root) return true;
+  const p = S.play, lever = p.crank && p.crank.axle === g.axle ? p.crank.len : 1;
+  return lever * Math.abs(inf.k / il.k) >= (LS().strength || STRENGTH_NEEDED);
+}
 
 // ---------- Saved progress (browser only) ----------
 const SAVE_KEY = 'brickl.v1';
@@ -305,7 +500,7 @@ function newPlay(li) {
   const L = LESSONS[li];
   return {
     axles: L.fixed.axles.map((a) => ({ ...a })), gears: [], motor: L.fixed.motor, motorFixed: !!L.fixed.motor,
-    motorOn: false, reverse: false, helpers: true, sel: null, ang: {}, phis: {}, nextId: 1, lift: 0, prevLoad: null, warned: false,
+    motorOn: false, reverse: false, helpers: true, sel: null, ang: {}, phis: {}, nextId: 1, lift: 0, prevLoad: null, warned: false, round: 0, axleLen: null, crank: null, atFlag: false,
   };
 }
 
@@ -341,6 +536,7 @@ function dirArrow(R, cw, col) {
   const x0 = R * Math.cos(a0), y0 = R * Math.sin(a0), x1 = R * Math.cos(a1), y1 = R * Math.sin(a1);
   return `<g transform="scale(${cw ? 1 : -1} 1)"><path d="M${x0.toFixed(1)},${y0.toFixed(1)} A${R},${R} 0 0 1 ${x1.toFixed(1)},${y1.toFixed(1)}" fill="none" stroke="${col}" stroke-width="4" stroke-linecap="round"/><path d="M${(x1 + 9).toFixed(1)},${(y1 + 2).toFixed(1)} L${(x1 - 5).toFixed(1)},${(y1 - 6).toFixed(1)} L${(x1 - 3).toFixed(1)},${(y1 + 9).toFixed(1)}Z" fill="${col}"/></g>`;
 }
+const crankArm = (Lp, hlPin) => `<rect x="-13" y="-13" width="${Lp + 26}" height="26" rx="13" fill="#5B6270" stroke="#1F2430" stroke-width="2"/><circle r="7" fill="#1F2430"/><circle cx="${Lp}" cy="0" r="15" fill="#C93C3C" stroke="#fff" stroke-width="3"/>`;
 const crate = (w = 64, h = 60) => `<rect x="${-w / 2}" y="0" width="${w}" height="${h}" rx="6" fill="#B5793C" stroke="#7A4D20" stroke-width="3"/><path d="M${-w / 2 + 6},6 L${w / 2 - 6},${h - 6} M${w / 2 - 6},6 L${-w / 2 + 6},${h - 6}" stroke="#7A4D20" stroke-width="3"/><rect x="-17" y="${h / 2 - 11}" width="34" height="22" rx="5" fill="#1F2430"/><text y="${h / 2 + 5}" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">50</text>`;
 
 function icon(kind, w = 56, h = 44) {
@@ -352,9 +548,45 @@ function icon(kind, w = 56, h = 44) {
   if (kind === 'string') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><path d="M6 30 C16 6, 26 40, 36 16 S50 20, 50 10" fill="none" stroke="#7A4D20" stroke-width="3" stroke-linecap="round"/></svg>`;
   if (kind === 'toy') return `<svg width="${w}" height="${h}" viewBox="-32 -6 64 72" aria-hidden="true">${crate(52, 50)}</svg>`;
   if (kind === 'cw' || kind === 'ccw') return `<svg width="${w}" height="${h}" viewBox="-40 -40 80 80" aria-hidden="true"><circle r="16" fill="#F2A33A" stroke="#B86E0F" stroke-width="3"/><g transform="translate(0 8)">${dirArrow(28, kind === 'cw', '#1F2430')}</g></svg>`;
+  if (/^ax\d$/.test(kind)) { const n = +kind[2]; return `<svg width="${w}" height="${h}" viewBox="0 0 66 44" aria-hidden="true"><rect x="3" y="18" width="${n * 10}" height="8" rx="2" fill="#1F2430"/>${Array.from({ length: n - 1 }, (_, i) => `<rect x="${3 + (i + 1) * 10 - 0.75}" y="18" width="1.5" height="8" fill="#9AA3B2"/>`).join('')}<text x="${n * 10 + 8}" y="27" font-size="13" font-weight="800" fill="#1F2430" font-family="Nunito, sans-serif">${n}</text></svg>`; }
+  if (kind === 'axles') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="6" y="8" width="20" height="6" rx="2" fill="#1F2430"/><rect x="6" y="19" width="32" height="6" rx="2" fill="#1F2430"/><rect x="6" y="30" width="44" height="6" rx="2" fill="#1F2430"/></svg>`;
+  if (kind === 'beam3') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="4" y="12" width="48" height="20" rx="10" fill="#3A4150"/>${[0, 1, 2].map((i) => `<circle cx="${14 + i * 14}" cy="22" r="4.5" fill="#FAF8F3"/>`).join('')}</svg>`;
+  if (kind === 'pin') return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="10" y="17" width="36" height="10" rx="4" fill="#1F2430"/><rect x="26" y="14" width="4" height="16" rx="1" fill="#1F2430"/></svg>`;
+  if (kind === 'l2build') return `<svg width="${w}" height="${h}" viewBox="-40 -48 150 96" aria-hidden="true">${gearSVG(8)}<g transform="translate(${radius(8) + radius(24)} 0) scale(.6)">${gearSVG(24)}</g></svg>`;
+  if (kind === 'crankS' || kind === 'crankL' || kind === 'near' || kind === 'far') {
+    const len = kind === 'crankS' ? 22 : 44, hand = kind === 'near' ? 12 : kind === 'far' ? 44 : null;
+    return `<svg width="${w}" height="${h}" viewBox="0 0 56 44" aria-hidden="true"><rect x="2" y="16" width="${len + 10}" height="12" rx="6" fill="#5B6270"/><circle cx="8" cy="22" r="3" fill="#1F2430"/><circle cx="${len + 6}" cy="22" r="6" fill="#C93C3C"/>${hand ? `<circle cx="${hand}" cy="22" r="9" fill="none" stroke="#F2A33A" stroke-width="3"/>` : ''}</svg>`;
+  }
   const teeth = +kind.slice(1);
   const r = radius(teeth), s = r + r * 0.1 + 4;
   return `<svg width="${w}" height="${h}" viewBox="${-s} ${-s} ${2 * s} ${2 * s}" aria-hidden="true">${gearSVG(teeth)}</svg>`;
+}
+
+// ---------- Top view (lesson 4) ----------
+const LAYER = { gear: [32, 176, '#F2A33A', '#B86E0F'], beam: [46, 300, '#3A4150', '#1F2430'], bush: [40, 46, '#9AA3B2', '#5B6270'] };
+function stackSVG(layers, len, o = {}) {
+  // Front on the left; the axle goes in from the front; a wall stands right behind the parts.
+  const x0 = 200, cy = 224, need = layers.length, wallX = x0 + need * U + 4, L = t();
+  const txt = (x, y, str, anchor = 'middle', size = 16, cls = '') => `<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="${size}" font-weight="800" fill="#5B6270" font-family="Nunito, sans-serif" class="${cls}">${esc(str)}</text>`;
+  let s = `<rect x="${wallX}" y="40" width="30" height="368" rx="4" fill="#CFC8BA"/>`;
+  for (let y = 48; y < 400; y += 18) s += `<line x1="${wallX + 2}" y1="${y + 12}" x2="${wallX + 28}" y2="${y}" stroke="#A89F8E" stroke-width="2"/>`;
+  s += txt(wallX + 15, 30, L.wall) + txt(x0 - 26, cy + 6, L.front, 'end');
+  layers.forEach((kind, i) => {
+    const [w, h, fill, stroke] = LAYER[kind], cx = x0 + i * U + U / 2, falls = len != null && i >= len;
+    const tr = falls ? `translate(${cx + 14} ${cy + 80}) rotate(18)` : `translate(${cx} ${cy})`;
+    let shape = `<rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="${kind === 'beam' ? 10 : 6}" fill="${fill}" stroke="${falls ? '#C93C3C' : stroke}" stroke-width="${falls ? 4 : 2}"/>`;
+    if (kind === 'gear') for (let y = -h / 2 + 8; y < h / 2 - 4; y += 10) shape += `<line x1="${-w / 2 + 4}" y1="${y}" x2="${w / 2 - 4}" y2="${y}" stroke="${stroke}" stroke-width="1.5" opacity=".6"/>`;
+    s += `<g transform="${tr}" opacity="${falls ? 0.7 : 1}">${shape}</g>`;
+    if (o.nums) s += txt(cx, cy - 162, String(i + 1), 'middle', 20, o.blink ? 'blink' : '');
+  });
+  if (o.ghost) s += `<rect x="${x0}" y="${cy - 9}" width="${need * U}" height="18" rx="3" fill="none" stroke="#1F2430" stroke-width="3" stroke-dasharray="7 6" opacity=".5" class="pulse"/>`;
+  if (len != null) {
+    s += `<rect x="${x0}" y="${cy - 8}" width="${len * U}" height="16" rx="3" fill="#1F2430"/>`;
+    for (let i = 1; i < len; i++) s += `<rect x="${x0 + i * U - 1}" y="${cy - 8}" width="2" height="16" fill="#9AA3B2"/>`;
+    s += txt(x0 + (len * U) / 2, cy + 186, `${L.axle} ${len}`, "middle", 20);
+    if (len > need) s += `<g transform="translate(${wallX + 15} ${cy})"><circle r="16" fill="#C93C3C" stroke="#fff" stroke-width="3"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">!</text></g>`;
+  }
+  return s;
 }
 
 // ---------- Gear math (no physics engine needed) ----------
@@ -364,6 +596,7 @@ function analyze(p) {
   const pairs = [];
   for (let i = 0; i < gs.length; i++) for (let j = i + 1; j < gs.length; j++) {
     const a = gs[i], b = gs[j], d = Math.hypot(b.x - a.x, b.y - a.y), s = a.r + b.r;
+    if (a.hidden || b.hidden) continue;
     if (Math.abs(d - s) < 1.5) {
       adj[a.id].push([b, 'mesh']); adj[b.id].push([a, 'mesh']);
       pairs.push({ type: 'mesh', x: a.x + ((b.x - a.x) * a.r) / d, y: a.y + ((b.y - a.y) * a.r) / d });
@@ -399,12 +632,13 @@ function analyze(p) {
   // Lesson 2: is the motor strong enough for the box?
   const L = LESSONS[S.li];
   const loadGear = L.load ? gs.find((g) => g.axle === L.load) || null : null;
-  const stall = !!(loadGear && motorGear && info[loadGear.id].root === motorGear.id && 1 / Math.abs(info[loadGear.id].k) < STRENGTH_NEEDED);
+  const stall = !!(loadGear && motorGear && info[loadGear.id].root === motorGear.id && 1 / Math.abs(info[loadGear.id].k) < (L.strength || STRENGTH_NEEDED));
   return { gs, info, pairs, motorGear, loadGear, stall };
 }
 const gearAngle = (an, p, g) => { const i = an.info[g.id]; return i.k * (p.phis[i.root] || 0) + i.c; };
 
 function nextGhost(p) {
+  if (LS().guided === false || LS().type === 'stack') return null;
   for (const gh of LS().ghosts) {
     const ax = p.axles.find((a) => a.hx === gh.hx && a.hy === gh.hy);
     if (gh.type === 'axle' && !ax) return gh;
@@ -414,7 +648,7 @@ function nextGhost(p) {
   return null;
 }
 function used(p) {
-  return { axle: p.axles.filter((a) => !a.fixed).length, g8: p.gears.filter((g) => g.teeth === 8).length, g16: p.gears.filter((g) => g.teeth === 16).length, g24: p.gears.filter((g) => g.teeth === 24).length, motor: p.motor && !p.motorFixed ? 1 : 0 };
+  return { axle: p.axles.filter((a) => !a.fixed).length, g8: p.gears.filter((g) => g.teeth === 8).length, g16: p.gears.filter((g) => g.teeth === 16).length, g24: p.gears.filter((g) => g.teeth === 24).length, motor: p.motor && !p.motorFixed ? 1 : 0, crankS: p.crank && p.crank.kind === 'crankS' ? 1 : 0, crankL: p.crank && p.crank.kind === 'crankL' ? 1 : 0 };
 }
 
 // ---------- Speech ----------
@@ -479,6 +713,15 @@ function ideaPic() {
       <g id="ibox" transform="translate(${110 + r8 + r24 + 18} 220)">${crate(56, 50)}</g>
       <text x="300" y="${110 + r24 + 30}" text-anchor="end" font-family="Baloo 2, sans-serif" font-size="22" font-weight="800" fill="#1F2430"></text>`;
   }
+  if (k.kind === 'stack') return `<g transform="translate(40 12) scale(.62)">${stackSVG(['gear', 'beam', 'bush'], 3, { nums: true })}</g>`;
+  if (k.kind === 'chain') {
+    const xs = [100, 100 + radius(24) + radius(16), 100 + radius(24) + 2 * radius(16) + radius(8)];
+    return [24, 16, 8].map((tt, i) => `<g transform="translate(${xs[i]} 140)"><g id="ig${i + 1}">${gearSVG(tt)}</g>${lbl(radius(tt) + 36, ['1\u00d7', '1.5\u00d7', '3\u00d7'][i])}</g>`).join('');
+  }
+  if (k.kind === 'crank') {
+    return `<g transform="translate(170 90)"><circle r="26" fill="#9AA3B2" stroke="#5B6270" stroke-width="2"/><g id="ig1">${crankArm(110)}</g></g>
+      <line id="irope" x1="196" y1="90" x2="196" y2="220" stroke="#7A4D20" stroke-width="3"/><g id="ibox" transform="translate(196 220)">${crate(56, 50)}</g>`;
+  }
   // three gears in a row
   const r = radius(16);
   return [0, 1, 2].map((i) => `<g transform="translate(${118 + i * 2 * r} 160)"><g id="ig${i + 1}">${gearSVG(16)}</g>${dirArrow(r + 14, i !== 1, GEAR_COL[16][1])}${lbl(r + 36, String(i + 1))}</g>`).join('');
@@ -502,7 +745,14 @@ function tickIdea(dt) {
     const cycle = (ideaA * 2.2) % 9, lift = cycle < 7 ? cycle * 12 : 84 - (cycle - 7) * 42;
     const box = document.getElementById('ibox'), rope = document.getElementById('irope');
     if (box) { const x = 110 + radius(8) + radius(24) + 18; box.setAttribute('transform', `translate(${x} ${220 - lift})`); rope.setAttribute('y2', 220 - lift); }
-  } else {
+  } else if (k.kind === 'chain') {
+    const a2 = meshAngle(ideaA, 24, 16, 0); set('ig1', ideaA); set('ig2', a2); set('ig3', meshAngle(a2, 16, 8, 0));
+  } else if (k.kind === 'crank') {
+    set('ig1', -ideaA * 1.6);
+    const cycle = (ideaA * 1.6) % 9, lift = cycle < 7 ? cycle * 12 : 84 - (cycle - 7) * 42;
+    const box = document.getElementById('ibox'), rope = document.getElementById('irope');
+    if (box) { box.setAttribute('transform', `translate(196 ${220 - lift})`); rope.setAttribute('y2', 220 - lift); }
+  } else if (k.kind === 'three') {
     set('ig1', ideaA); set('ig2', meshAngle(ideaA, 16, 16, 0)); set('ig3', meshAngle(meshAngle(ideaA, 16, 16, 0), 16, 16, 0));
   }
 }
@@ -511,22 +761,24 @@ function renderPlay() {
   const L = t(), TL = tl(), p = S.play, u = used(p), st = LS().stock;
   const ng = nextGhost(p);
   const nextKey = ng ? (ng.type === 'gear' ? 'g' + ng.teeth : ng.type) : null;
-  const items = [['axle', L.axle, ''], ['g24', L.gear + ' 24', L.big], ['g16', L.gear + ' 16', L.medium], ['g8', L.gear + ' 8', L.small], ['motor', L.motor, '']]
+  const LL = LS(), stack = LL.type === 'stack';
+  const items = [['axle', L.axle, ''], ['g24', L.gear + ' 24', L.big], ['g16', L.gear + ' 16', L.medium], ['g8', L.gear + ' 8', L.small], ['motor', L.motor, ''],
+    ['crankS', L.crankS, L.oneHole], ['crankL', L.crankL, L.twoHoles], ...[2, 3, 4, 5, 6].map((n) => ['ax' + n, L.axle + ' ' + n, ''])]
     .filter(([k]) => st[k] > 0)
     .map(([k, name, sub]) => {
-      const left = st[k] - u[k];
+      const left = LL.reusable ? st[k] : st[k] - (u[k] || 0);
       return `<button class="titem ${left <= 0 ? 'empty' : ''} ${k === nextKey && left > 0 ? 'next' : ''}" data-part="${k}" aria-label="${esc(name)}, ${left} ${esc(L.left)}">${icon(k)}<span><b>${esc(name)}</b><small>${sub ? esc(sub) + ' · ' : ''}×${left}</small></span></button>`;
     }).join('');
   app.innerHTML = header(true) + `<main class="play">
     <aside class="tray" aria-label="${esc(L.parts)}"><h3>${esc(L.parts)}</h3><p class="tip">${esc(L.dragTip)}</p>${items}</aside>
     <div class="boardwrap">
-      <div class="goal"><small>${esc(L.goal)}</small><span>${esc(TL.goal)}</span></div>
+      <div class="goal"><small>${esc(L.goal)}</small><span>${stack ? `${esc(L.task)} ${p.round + 1}/${LL.rounds.length}: ` : ''}${esc(TL.goal)}</span></div>
       <section class="board" id="board" aria-label="Board"><svg id="bsvg" viewBox="0 0 ${BW} ${BH}" preserveAspectRatio="xMidYMid meet"></svg>
         ${S.toast ? `<div class="toast" role="status">${esc(S.toast)}</div>` : ''}
       </section>
       <div class="controls">
-        <button class="toggle" data-act="motor" aria-pressed="${p.motorOn}"><span class="track"></span>${esc(L.motorBtn)}</button>
-        <button class="chip" data-act="flip">${flipIcon}${esc(L.flip)}</button>
+        ${LL.noMotor ? '' : `<button class="toggle" data-act="motor" aria-pressed="${p.motorOn}"><span class="track"></span>${esc(L.motorBtn)}</button>
+        <button class="chip" data-act="flip">${flipIcon}${esc(L.flip)}</button>`}
         <button class="chip" data-act="helpers" aria-pressed="${p.helpers}">${eyeIcon}${esc(L.helpers)}</button>
         <span class="spacer"></span>
         <button class="btn big" data-act="test">${esc(L.test)}</button>
@@ -549,6 +801,10 @@ function drawBoard() {
   const svg = document.getElementById('bsvg');
   if (!svg) return;
   const p = S.play, an = S.an, LL = LS();
+  if (LL.type === 'stack') {
+    svg.innerHTML = stackSVG(LL.rounds[p.round], p.axleLen, { nums: p.helpers || S.hintLevel >= 2, blink: S.hintLevel >= 2 && !S.win, ghost: S.hintLevel >= 3 && !S.win });
+    return;
+  }
   let out = '';
   for (let r = 0; r < ROWS; r++) {
     out += `<rect x="${OX - 26}" y="${holeY(r) - 20}" width="${(COLS - 1) * U + 52}" height="40" rx="20" fill="#3A4150"/>`;
@@ -568,12 +824,14 @@ function drawBoard() {
     const x = holeX(gh.hx), y = holeY(gh.hy);
     if (gh.type === 'axle') out += `<circle cx="${x}" cy="${y}" r="16" fill="none" stroke="#F2A33A" stroke-width="4" stroke-dasharray="6 5" class="pulse"/>`;
     if (gh.type === 'gear') out += `<g transform="translate(${x} ${y})" class="pulse">${gearSVG(gh.teeth, { ghost: true })}</g>`;
+    if (gh.type === 'crank') out += `<g transform="translate(${x} ${y})" class="pulse"><rect x="-13" y="-13" width="${gh.len * U + 26}" height="26" rx="13" fill="none" stroke="#1F2430" stroke-width="3" stroke-dasharray="7 6" opacity=".5"/></g>`;
     if (gh.type === 'motor') out += `<g transform="translate(${x} ${y})" class="pulse" opacity=".5"><rect x="-26" y="14" width="52" height="24" rx="8" fill="none" stroke="#1F2430" stroke-width="3" stroke-dasharray="6 5"/></g>`;
   }
   // Bare axles
   for (const a of p.axles) if (!p.gears.some((g) => g.axle === a.id)) out += `<g transform="translate(${holeX(a.hx)} ${holeY(a.hy)})" data-aid="${a.id}" style="cursor:pointer"><circle r="22" fill="transparent"/>${axleEnd()}</g>`;
   // Gears
   for (const g of an.gs) {
+    if (g.hidden) continue;
     const deg = (gearAngle(an, p, g) * 180) / Math.PI;
     out += `<g transform="translate(${g.x} ${g.y})" data-gid="${g.id}" style="cursor:grab"><g id="rot-${g.id}" transform="rotate(${deg.toFixed(2)})">${gearSVG(g.teeth)}</g></g>`;
   }
@@ -582,6 +840,12 @@ function drawBoard() {
     const lx = holeX(loadAx.hx) + LOAD_DRUM, ly = holeY(loadAx.hy);
     out += `<line id="rope" x1="${lx}" y1="${ly}" x2="${lx}" y2="${boxTop(p)}" stroke="#7A4D20" stroke-width="3.5" pointer-events="none"/>`;
     out += `<g id="box" transform="translate(${lx} ${boxTop(p)})" pointer-events="none">${crate()}</g>`;
+  }
+  // Crank
+  if (p.crank) {
+    const a = p.axles.find((x) => x.id === p.crank.axle), g = an.gs.find((x) => x.axle === a.id);
+    const deg = g ? (gearAngle(an, p, g) * 180) / Math.PI : 0, Lp = p.crank.len * U;
+    out += `<g transform="translate(${holeX(a.hx)} ${holeY(a.hy)})" data-cid="1" style="cursor:grab"><g id="crank" transform="rotate(${deg.toFixed(2)})">${crankArm(Lp)}<rect x="-20" y="-28" width="${Lp + 50}" height="56" fill="transparent"/></g></g>`;
   }
   // Badges: star, motor
   for (const a of p.axles) if (a.star) out += `<g transform="translate(${holeX(a.hx)} ${holeY(a.hy)})" pointer-events="none">${starBadge()}</g>`;
@@ -592,6 +856,7 @@ function drawBoard() {
     : `<g transform="translate(${pr.x} ${pr.y})" pointer-events="none"><circle r="13" fill="#C93C3C" stroke="#fff" stroke-width="2.5"/><text y="6" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="Nunito, sans-serif">!</text></g>`;
   // Helpers: speed and direction
   if (p.helpers) for (const g of an.gs) {
+    if (g.hidden) continue;
     const inf = an.info[g.id];
     const driven = an.motorGear && inf.root === an.motorGear.id && !inf.jam;
     const label = driven ? `${g.teeth} · ${fmtSpeed(inf.k)}` : `${g.teeth}`;
@@ -615,6 +880,7 @@ function selPos(sel) {
   const p = S.play;
   if (sel.kind === 'gear') { const g = S.an.gs.find((x) => x.id === sel.id); return g ? [g.x + g.r * 0.72, g.y - g.r * 0.72] : null; }
   if (sel.kind === 'axle') { const a = p.axles.find((x) => x.id === sel.id); return a ? [holeX(a.hx) + 26, holeY(a.hy) - 26] : null; }
+  if (sel.kind === 'crank' && p.crank) { const a = p.axles.find((x) => x.id === p.crank.axle); return [holeX(a.hx) - 30, holeY(a.hy) - 34]; }
   if (sel.kind === 'motor' && p.motor) { const a = p.axles.find((x) => x.id === p.motor); return [holeX(a.hx) + 40, holeY(a.hy) + 26]; }
   return null;
 }
@@ -622,6 +888,7 @@ function selPos(sel) {
 function panelHTML() {
   const L = t(), TL = tl();
   if (S.win) return `<div class="overlay"><div class="panel" role="dialog" aria-modal="true"><h2>${esc(L.win)}</h2><p>${esc(TL.winSub)}</p><button class="btn big" data-act="step" data-v="2">${esc(L.toBuild)} →</button></div></div>`;
+  if (S.panel === 'round') return `<div class="overlay"><div class="panel" role="dialog" aria-modal="true"><h2>${esc(L.fits)}</h2><button class="btn big" data-act="nextRound">${esc(L.nextTask)} \u2192</button></div></div>`;
   if (!S.panel) return '';
   const p = S.play, prob = LS().check(p, S.an || analyze(p));
   let body = '';
@@ -643,6 +910,15 @@ function buildScene(cfg, label) {
   // Side view of a 9-hole beam.
   const bx = 110, by = 128, hx = (n) => bx + n * U;
   let s = `<svg class="scene" viewBox="0 0 760 270" role="img" aria-label="${esc(label)}">`;
+  if (cfg.stack) return s + `<g transform="translate(110 0) scale(.6)">${stackSVG(cfg.stack, cfg.len, { nums: true })}</g></svg>`;
+  if (cfg.measure) {
+    s += `<rect x="${bx - 26}" y="60" width="${8 * U + 52}" height="40" rx="20" fill="#3A4150"/>`;
+    for (let n = 0; n < 9; n++) s += `<circle cx="${hx(n)}" cy="80" r="12" fill="#F3EFE6"/>`;
+    for (let n = 0; n < 3; n++) s += `<line x1="${hx(n)}" y1="104" x2="${hx(n)}" y2="150" stroke="#F2A33A" stroke-width="3" stroke-dasharray="5 5"/><text x="${hx(n)}" y="215" text-anchor="middle" font-size="20" font-weight="800" fill="#1F2430" font-family="Nunito, sans-serif">${n + 1}</text>`;
+    s += `<rect x="${hx(0) - 28}" y="160" width="${3 * U}" height="16" rx="3" fill="#1F2430"/>${[1, 2].map((i) => `<rect x="${hx(0) - 28 + i * U - 1}" y="160" width="2" height="16" fill="#9AA3B2"/>`).join('')}`;
+    s += `<text x="${hx(3) + 10}" y="174" font-size="22" font-weight="800" fill="#1F2430" font-family="Baloo 2, sans-serif">= ${esc(t().axle)} 3</text>`;
+    return s + '</svg>';
+  }
   const hl = (x, y, r) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
   if (cfg.table) s += `<rect x="0" y="${by + 30}" width="${hx(5)}" height="22" rx="4" fill="#C9A27A"/><rect x="${hx(5) - 30}" y="${by + 52}" width="20" height="100" fill="#B08560"/>`;
   s += `<rect x="${bx - 26}" y="${by - 20}" width="${8 * U + 52}" height="40" rx="20" fill="#3A4150"/>`;
@@ -659,7 +935,14 @@ function buildScene(cfg, label) {
     if (cfg.arrows) s += `<g transform="translate(${hx(h)} ${by})">${dirArrow(radius(tt) + 12, gs.indexOf(gs.find((g) => g[0] === h)) % 2 === 0, GEAR_COL[tt][1])}</g>`;
     prev = { h, t: tt, a };
   }
-  if (cfg.string != null) s += `<line x1="${hx(cfg.string) + 6}" y1="${by}" x2="${hx(cfg.string) + 6}" y2="${by + 98}" stroke="#7A4D20" stroke-width="3.5"/><g transform="translate(${hx(cfg.string) + 6} ${by + 96})">${crate(50, 40)}</g>`;
+  if (cfg.string != null) { const sl = cfg.stringLen || 98; s += `<line x1="${hx(cfg.string) + 6}" y1="${by}" x2="${hx(cfg.string) + 6}" y2="${by + sl}" stroke="#7A4D20" stroke-width="3.5"/><g transform="translate(${hx(cfg.string) + 6} ${by + sl - 2})">${crate(50, 40)}</g>`; }
+  if (cfg.crank) {
+    const c = cfg.crank, x = hx(c.hole), Lp = 2 * U - 10;
+    s += `<g transform="translate(${x} ${by}) rotate(-90)">${crankArm(Lp)}</g>`;
+    if (c.hl === 'arm') s += `<rect x="${x - 22}" y="${by - Lp - 22}" width="44" height="${Lp + 44}" rx="22" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
+    if (c.hl === 'pin') s += `<circle cx="${x}" cy="${by - Lp}" r="26" fill="none" stroke="#F2A33A" stroke-width="5" stroke-dasharray="8 6" class="pulse"/>`;
+    if (c.turn) s += `<g transform="translate(${x} ${by})">${dirArrow(Lp + 26, true, '#C93C3C')}</g>`;
+  }
   for (const [h, r] of cfg.hl || []) s += hl(hx(h), by, r);
   if (cfg.inset) {
     const L = t();
@@ -689,7 +972,7 @@ function renderBuild() {
     const ok = B.answer === BD.correct;
     const fb = B.answer == null ? '' : ok ? TL.right : TL.wrong;
     const opts = BD.answers === 'numbers'
-      ? `<div class="answers">${[1, 2, 3, 4].map((n) => `<button data-act="answer" data-v="${n}" class="${B.answer === n ? (n === BD.correct ? 'right' : 'wrong') : ''}">${n}</button>`).join('')}</div>`
+      ? `<div class="answers">${(BD.nums || [1, 2, 3, 4]).map((n) => `<button data-act="answer" data-v="${n}" class="${B.answer === n ? (n === BD.correct ? 'right' : 'wrong') : ''}">${n}</button>`).join('')}</div>`
       : `<div class="answers">${TL.opts.map((txt, n) => `<button data-act="answer" data-v="${n}" class="wide ${B.answer === n ? (n === BD.correct ? 'right' : 'wrong') : ''}">${icon(BD.icons[n], 80, 70)}<span>${esc(txt)}</span></button>`).join('')}</div>`;
     main = `<p class="instr"><button class="speak" data-act="speak" aria-label="${esc(L.listen)}">${speakerIcon}</button><span>${esc(TL.testQ)}</span></p>${opts}
       <p class="feedback" role="status">${esc(fb)}</p>
@@ -751,11 +1034,13 @@ app.addEventListener('click', (e) => {
     case 'helpers': p.helpers = !p.helpers; renderPlay(); break;
     case 'test': {
       const prob = LS().check(p, S.an);
-      if (!prob) { S.win = true; S.panel = null; } else { S.fails++; S.panel = 'fail'; }
+      if (!prob && LS().type === 'stack' && p.round < LS().rounds.length - 1) S.panel = 'round';
+      else if (!prob) { S.win = true; S.panel = null; } else { S.fails++; S.panel = 'fail'; }
       renderPlay(); break;
     }
     case 'hint': S.hintLevel = Math.min(3, S.hintLevel + 1); S.panel = 'hint'; renderPlay(); break;
     case 'close': S.panel = null; renderPlay(); break;
+    case 'nextRound': p.round++; p.axleLen = null; S.panel = null; S.fails = 0; S.hintLevel = 0; renderPlay(); break;
     case 'have': S.build.have[v] = !S.build.have[v]; renderBuild(); break;
     case 'bnext': {
       S.build.i++;
@@ -786,7 +1071,8 @@ function overBoard(cx, cy) {
 
 function tryDrop(kind, x, y) {
   const p = S.play, L = t();
-  const left = LS().stock[kind] - used(p)[kind];
+  if (/^ax\d$/.test(kind)) { p.axleLen = +kind[2]; S.panel = null; renderPlay(); return; }
+  const left = LS().stock[kind] - (used(p)[kind] || 0);
   if (left <= 0) return toast(L.noneLeft);
   const nearestAxle = () => {
     let best = null, bd = U * 0.75;
@@ -798,6 +1084,12 @@ function tryDrop(kind, x, y) {
     if (hx < 0 || hy < 0 || hx >= COLS || hy >= ROWS || Math.hypot(holeX(hx) - x, holeY(hy) - y) > U * 0.6) return toast(L.dropAxle);
     if (p.axles.some((a) => a.hx === hx && a.hy === hy)) return toast(L.dropAxle);
     p.axles.push({ id: 'a' + p.nextId++, hx, hy });
+  } else if (kind === 'crankS' || kind === 'crankL') {
+    if (p.crank) return toast(L.oneCrank);
+    const a = nearestAxle();
+    if (!a) return toast(L.dropCrank);
+    p.crank = { axle: a.id, len: kind === 'crankS' ? 1 : 2, kind };
+    if (!p.gears.some((g) => g.axle === a.id)) p.gears.push({ id: 'h' + p.nextId++, axle: a.id, teeth: 1, hidden: true });
   } else if (kind === 'motor') {
     const a = nearestAxle();
     if (!a) return toast(L.dropMotor);
@@ -805,6 +1097,7 @@ function tryDrop(kind, x, y) {
   } else {
     const a = nearestAxle();
     if (!a) return toast(L.dropGear);
+    p.gears = p.gears.filter((g) => !(g.hidden && g.axle === a.id));
     if (p.gears.some((g) => g.axle === a.id)) return toast(L.full);
     p.gears.push({ id: 'g' + p.nextId++, axle: a.id, teeth: +kind.slice(1) });
   }
@@ -815,10 +1108,16 @@ function tryDrop(kind, x, y) {
 function removeSel() {
   const p = S.play, sel = p.sel;
   if (!sel) return;
-  if (sel.kind === 'gear') p.gears = p.gears.filter((g) => g.id !== sel.id);
+  if (sel.kind === 'gear') {
+    const g = p.gears.find((x) => x.id === sel.id);
+    p.gears = p.gears.filter((x) => x.id !== sel.id);
+    if (g && p.crank && p.crank.axle === g.axle) p.gears.push({ id: 'h' + p.nextId++, axle: g.axle, teeth: 1, hidden: true });
+  }
+  if (sel.kind === 'crank') { const ax = p.crank.axle; p.crank = null; p.gears = p.gears.filter((g) => !(g.hidden && g.axle === ax)); }
   if (sel.kind === 'axle') {
     p.gears = p.gears.filter((g) => g.axle !== sel.id);
     if (p.motor === sel.id) { p.motor = null; p.motorOn = false; }
+    if (p.crank && p.crank.axle === sel.id) p.crank = null;
     p.axles = p.axles.filter((a) => a.id !== sel.id);
   }
   if (sel.kind === 'motor') { p.motor = null; p.motorOn = false; }
@@ -835,7 +1134,16 @@ document.addEventListener('pointerdown', (e) => {
   e.preventDefault();
   const p = S.play;
   if (e.target.closest('[data-del]')) { removeSel(); return; }
-  const gEl = e.target.closest('[data-gid]'), aEl = e.target.closest('[data-aid]'), mEl = e.target.closest('[data-mid]');
+  if (LS().type === 'stack') return;
+  const cEl = e.target.closest('[data-cid]');
+  const gEl = cEl ? null : e.target.closest('[data-gid]'), aEl = e.target.closest('[data-aid]'), mEl = e.target.closest('[data-mid]');
+  if (cEl) {
+    const g = S.an.gs.find((x) => x.axle === p.crank.axle), pt = svgPt(e.clientX, e.clientY);
+    turn = { g, last: Math.atan2(pt.y - g.y, pt.x - g.x), total: 0, warned: false };
+    tap = { kind: 'crank', id: 'crank' };
+    try { svg.setPointerCapture(e.pointerId); } catch (_) { /* ignore */ }
+    return;
+  }
   if (mEl) { tap = p.motorFixed ? { fixed: true } : { kind: 'motor', id: 'motor' }; return; }
   if (gEl) {
     const g = S.an.gs.find((x) => x.id === gEl.dataset.gid), pt = svgPt(e.clientX, e.clientY);
@@ -869,7 +1177,7 @@ document.addEventListener('pointermove', (e) => {
     if (turn.total > 0.08) tap = null;
     if (inf.jam) return;
     // Heavy box: a finger is only strong enough with enough gearing.
-    if (an.loadGear && an.info[an.loadGear.id].root === inf.root && Math.abs(inf.k / an.info[an.loadGear.id].k) < STRENGTH_NEEDED) {
+    if (!canTurn(an, g)) {
       if (!turn.warned && turn.total > 0.3) { turn.warned = true; toast(t().heavyHand); }
       return;
     }
@@ -886,7 +1194,8 @@ document.addEventListener('pointerup', (e) => {
       // Tap on a tray part: place it on the next ghost spot if it matches.
       const ng = nextGhost(S.play);
       const key = ng ? (ng.type === 'gear' ? 'g' + ng.teeth : ng.type) : null;
-      if (key === d.kind) tryDrop(d.kind, holeX(ng.hx), holeY(ng.hy)); else toast(t().dragTip);
+      if (/^ax\d$/.test(d.kind)) tryDrop(d.kind, 0, 0);
+      else if (key === d.kind) tryDrop(d.kind, holeX(ng.hx), holeY(ng.hy)); else toast(t().dragTip);
     }
     return;
   }
@@ -915,7 +1224,7 @@ function frame(now) {
       let step = (p.reverse ? -1 : 1) * MOTOR_SPEED * dt;
       // Box at the flag or on the floor: the motor stops pulling.
       if (an.loadGear && an.info[an.loadGear.id].root === mg.id) {
-        const dl = -an.info[an.loadGear.id].k * step * LIFT_PER_RAD;
+        const dl = -an.info[an.loadGear.id].k * step * (LS().liftRate || LIFT_PER_RAD);
         if ((dl > 0 && p.lift >= MAX_LIFT) || (dl < 0 && p.lift <= 0)) step = 0;
       }
       p.phis[mg.id] = (p.phis[mg.id] || 0) + step;
@@ -925,10 +1234,16 @@ function frame(now) {
       p.ang[g.id] = a;
       const el = document.getElementById('rot-' + g.id);
       if (el) el.setAttribute('transform', `rotate(${((a * 180) / Math.PI).toFixed(2)})`);
+      if (p.crank && p.crank.axle === g.axle) { const c = document.getElementById('crank'); if (c) c.setAttribute('transform', `rotate(${((a * 180) / Math.PI).toFixed(2)})`); }
     }
     if (an.loadGear) {
       const a = p.ang[an.loadGear.id];
-      if (p.prevLoad != null) p.lift = Math.max(0, Math.min(MAX_LIFT, p.lift - (a - p.prevLoad) * LIFT_PER_RAD));
+      if (p.prevLoad != null) {
+        // With a hand crank the string winds up whichever way you turn (kid-friendly winch).
+        const dA = a - p.prevLoad, rate = LS().liftRate || LIFT_PER_RAD;
+        p.lift = Math.max(0, Math.min(MAX_LIFT, p.lift + (LS().noMotor ? Math.abs(dA) : -dA) * rate));
+      }
+      if (p.lift >= MAX_LIFT - 2 && !p.atFlag && LS().noMotor) { p.atFlag = true; turn = null; toast(t().atFlag); }
       p.prevLoad = a;
       const box = document.getElementById('box'), rope = document.getElementById('rope');
       if (box) { box.setAttribute('transform', `translate(${rope.getAttribute('x1')} ${boxTop(p)})`); rope.setAttribute('y2', boxTop(p)); }
